@@ -1,0 +1,203 @@
+{
+  "source": "spacemit-com/llama.cpp v0.2.5, 5105f9dfb",
+  "compiler": "Bianbu GCC 15.2.0, Release",
+  "hardware": "SpacemiT K3, eight A100 cores",
+  "binary_sha256": {
+    "base": "e8b70a2f9f97d6777089e00a6c46fe803f2c4f8fd0354dfd23acc1905442c7a8",
+    "direct": "1caf1d326c075458ddd2b96bffc9bb0b93809caa17cf5339550c2a4862606560",
+    "grouped": "812b8b09627e926ce9b6c3ab5a039f4eb8591f599977e1afd2e7dc3d87014576"
+  },
+  "end_to_end": {
+    "nativebase": {
+      "rounds": [
+        {
+          "warmup": true,
+          "prompt_hash": "3ede86130d089e337fd5fe5a31bf4e4998f4df313394428a9c5cc91df52a8d6e",
+          "output_hash": "b2c89b81461cd8e9a718242528c3d6085b0b5b08ccf7400176d0acd7be6ba874",
+          "pp": 77.28516535402643,
+          "tg": 8.764401616044363
+        },
+        {
+          "warmup": false,
+          "prompt_hash": "1f25ed035f8ea35a128e34d761ab410b0d087315ab35a7538c96b0953c6eed36",
+          "output_hash": "25552b4bbb260a5a8d65b8d0d35e117d81d678da0ab493a0d1bd94bcffca1c3e",
+          "pp": 80.39170860015426,
+          "tg": 8.797787873045408
+        },
+        {
+          "warmup": false,
+          "prompt_hash": "166a04f98c5755f6f75f60c24ef359a828f9ff1339be3894eb077d5dd554119c",
+          "output_hash": "b2c89b81461cd8e9a718242528c3d6085b0b5b08ccf7400176d0acd7be6ba874",
+          "pp": 80.74507518123484,
+          "tg": 8.82129814223461
+        },
+        {
+          "warmup": false,
+          "prompt_hash": "95237fcfb93025c3c15821a555ab0aecd8109e6d08b048d627d3295f90d793e2",
+          "output_hash": "b2c89b81461cd8e9a718242528c3d6085b0b5b08ccf7400176d0acd7be6ba874",
+          "pp": 80.49307036414939,
+          "tg": 8.815448583896135
+        }
+      ],
+      "pp_median": 80.49307036414939,
+      "tg_median": 8.815448583896135,
+      "next_token_probes_file_sha256": "4ade3dcedde393e67b9c8cf3dd2b24eaad66ced076f4c0174e7109335e3cbb1c"
+    },
+    "nativedirect": {
+      "rounds": [
+        {
+          "warmup": true,
+          "prompt_hash": "3ede86130d089e337fd5fe5a31bf4e4998f4df313394428a9c5cc91df52a8d6e",
+          "output_hash": "b2c89b81461cd8e9a718242528c3d6085b0b5b08ccf7400176d0acd7be6ba874",
+          "pp": 79.54796866804384,
+          "tg": 8.654543985895566
+        },
+        {
+          "warmup": false,
+          "prompt_hash": "1f25ed035f8ea35a128e34d761ab410b0d087315ab35a7538c96b0953c6eed36",
+          "output_hash": "25552b4bbb260a5a8d65b8d0d35e117d81d678da0ab493a0d1bd94bcffca1c3e",
+          "pp": 80.43606401202518,
+          "tg": 8.644151168366797
+        },
+        {
+          "warmup": false,
+          "prompt_hash": "166a04f98c5755f6f75f60c24ef359a828f9ff1339be3894eb077d5dd554119c",
+          "output_hash": "b2c89b81461cd8e9a718242528c3d6085b0b5b08ccf7400176d0acd7be6ba874",
+          "pp": 80.32088192328352,
+          "tg": 8.651399281439494
+        },
+        {
+          "warmup": false,
+          "prompt_hash": "95237fcfb93025c3c15821a555ab0aecd8109e6d08b048d627d3295f90d793e2",
+          "output_hash": "b2c89b81461cd8e9a718242528c3d6085b0b5b08ccf7400176d0acd7be6ba874",
+          "pp": 80.37151733889905,
+          "tg": 8.618525589154885
+        }
+      ],
+      "pp_median": 80.37151733889905,
+      "tg_median": 8.644151168366797,
+      "next_token_probes_file_sha256": "4ade3dcedde393e67b9c8cf3dd2b24eaad66ced076f4c0174e7109335e3cbb1c"
+    },
+    "nativegroup": {
+      "rounds": [
+        {
+          "warmup": true,
+          "prompt_hash": "3ede86130d089e337fd5fe5a31bf4e4998f4df313394428a9c5cc91df52a8d6e",
+          "output_hash": "b2c89b81461cd8e9a718242528c3d6085b0b5b08ccf7400176d0acd7be6ba874",
+          "pp": 77.61781231770426,
+          "tg": 8.64308740960085
+        },
+        {
+          "warmup": false,
+          "prompt_hash": "1f25ed035f8ea35a128e34d761ab410b0d087315ab35a7538c96b0953c6eed36",
+          "output_hash": "25552b4bbb260a5a8d65b8d0d35e117d81d678da0ab493a0d1bd94bcffca1c3e",
+          "pp": 80.80624430252847,
+          "tg": 8.66770137925142
+        },
+        {
+          "warmup": false,
+          "prompt_hash": "166a04f98c5755f6f75f60c24ef359a828f9ff1339be3894eb077d5dd554119c",
+          "output_hash": "b2c89b81461cd8e9a718242528c3d6085b0b5b08ccf7400176d0acd7be6ba874",
+          "pp": 80.93812343696153,
+          "tg": 8.681672823304808
+        },
+        {
+          "warmup": false,
+          "prompt_hash": "95237fcfb93025c3c15821a555ab0aecd8109e6d08b048d627d3295f90d793e2",
+          "output_hash": "b2c89b81461cd8e9a718242528c3d6085b0b5b08ccf7400176d0acd7be6ba874",
+          "pp": 80.66472777229859,
+          "tg": 8.678068454807924
+        }
+      ],
+      "pp_median": 80.80624430252847,
+      "tg_median": 8.678068454807924,
+      "next_token_probes_file_sha256": "4ade3dcedde393e67b9c8cf3dd2b24eaad66ced076f4c0174e7109335e3cbb1c"
+    },
+    "nativebase2": {
+      "rounds": [
+        {
+          "warmup": true,
+          "prompt_hash": "3ede86130d089e337fd5fe5a31bf4e4998f4df313394428a9c5cc91df52a8d6e",
+          "output_hash": "b2c89b81461cd8e9a718242528c3d6085b0b5b08ccf7400176d0acd7be6ba874",
+          "pp": 80.06610457759187,
+          "tg": 8.807410863060559
+        },
+        {
+          "warmup": false,
+          "prompt_hash": "1f25ed035f8ea35a128e34d761ab410b0d087315ab35a7538c96b0953c6eed36",
+          "output_hash": "25552b4bbb260a5a8d65b8d0d35e117d81d678da0ab493a0d1bd94bcffca1c3e",
+          "pp": 81.36815466560549,
+          "tg": 8.81045686554152
+        },
+        {
+          "warmup": false,
+          "prompt_hash": "166a04f98c5755f6f75f60c24ef359a828f9ff1339be3894eb077d5dd554119c",
+          "output_hash": "b2c89b81461cd8e9a718242528c3d6085b0b5b08ccf7400176d0acd7be6ba874",
+          "pp": 81.34498854497329,
+          "tg": 8.812699911900976
+        },
+        {
+          "warmup": false,
+          "prompt_hash": "95237fcfb93025c3c15821a555ab0aecd8109e6d08b048d627d3295f90d793e2",
+          "output_hash": "b2c89b81461cd8e9a718242528c3d6085b0b5b08ccf7400176d0acd7be6ba874",
+          "pp": 81.22018093064368,
+          "tg": 8.77149503589073
+        }
+      ],
+      "pp_median": 81.34498854497329,
+      "tg_median": 8.81045686554152,
+      "next_token_probes_file_sha256": "4ade3dcedde393e67b9c8cf3dd2b24eaad66ced076f4c0174e7109335e3cbb1c"
+    }
+  },
+  "microbenchmark": [
+    {
+      "k": 256,
+      "n": 32,
+      "base_median_ms": 0.032624,
+      "grouped_median_ms": 0.032581,
+      "direct_median_ms": 0.032665,
+      "sha256_fp32": "55f573e5251511d10759eeeb0bbfbecfe45380326d0f22c902af48085656e101"
+    },
+    {
+      "k": 2048,
+      "n": 1056,
+      "base_median_ms": 0.198615,
+      "grouped_median_ms": 0.237446,
+      "direct_median_ms": 0.194657,
+      "sha256_fp32": "b2a5b181b3c4132cf7e628360abec47f86d3a62f62a52c3faee8f439946f771e"
+    },
+    {
+      "k": 2048,
+      "n": 8192,
+      "base_median_ms": 0.633299,
+      "grouped_median_ms": 0.644632,
+      "direct_median_ms": 0.675048,
+      "sha256_fp32": "30c10ce5781247a50e042f39c4bd5eff7c832ebdcec7901afc5976cd2e58f420"
+    },
+    {
+      "k": 4096,
+      "n": 4096,
+      "base_median_ms": 0.656507,
+      "grouped_median_ms": 0.634758,
+      "direct_median_ms": 0.691505,
+      "sha256_fp32": "5ca095d48b4b39a5e17392b11f4439ab9cc6b3c6c94fd90c08eedf4ddd0c7772"
+    },
+    {
+      "k": 2048,
+      "n": 32768,
+      "base_median_ms": 2.452954,
+      "grouped_median_ms": 2.616528,
+      "direct_median_ms": 2.72498,
+      "sha256_fp32": "7cdc6b03889c29a9cf9949da24eb0513bf93d8824bd56282fd6c0e7a3f8a8a12"
+    },
+    {
+      "k": 2048,
+      "n": 248320,
+      "base_median_ms": 18.228117,
+      "grouped_median_ms": 19.113779,
+      "direct_median_ms": 20.137516,
+      "sha256_fp32": "5ec1d27d01ed99129669170026087cd82a65a93574a26ccce9311c3bd1d791b1"
+    }
+  ],
+  "protocol": "Paired local builds from identical source and compiler. Only the standalone backend library was replaced. Standalone device, b=ub=128, prompt=128, output=64. One warmup and eleven timed operator calls per Q6_K shape. Each variant wrote all N FP32 outputs for bytewise comparison."
+}

@@ -41,3 +41,7 @@ These are medians of three measured rounds after one warm-up, with 128 uncached 
 - The two production backends answered both short answer checks correctly. Their first-choice next token matched on 11 of 12 short prefixes, and longer greedy continuations differed. The vendor documents [lossy router conversion](https://github.com/spacemit-com/llama.cpp/pull/53). The measurements establish throughput; model quality needs a workload-specific evaluation.
 
 See [machine-readable results and sampling counts](results/qwen36-35b-k3.json). The kernel implementation is maintained in [SpacemiT's llama.cpp fork](https://github.com/spacemit-com/llama.cpp). The [main llama.cpp project](https://github.com/ggml-org/llama.cpp) also maintains RISC-V CPU support. Codex assisted with tooling and board tests; Grok Build assisted with the source audit.
+
+## Kernel experiments and upstream
+
+The [Q6_K operator probe and candidate patches](experiments/q6-decode/README.md) include output hashes, per-shape timings and a repeated unmodified control. [Upstream projects and contribution status](UPSTREAM.md) identifies the vendor, mainline and integration repositories.

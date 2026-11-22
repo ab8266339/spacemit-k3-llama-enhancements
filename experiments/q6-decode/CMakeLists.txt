@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.16)
+project(k3_standalone_probe LANGUAGES C CXX ASM)
+if(NOT IS_DIRECTORY "${LLAMA_SRC}/ggml")
+    message(FATAL_ERROR "Set LLAMA_SRC to the matching SpacemiT llama.cpp source tree")
+endif()
+add_subdirectory("${LLAMA_SRC}/ggml" ggml)

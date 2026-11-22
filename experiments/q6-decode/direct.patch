@@ -1,0 +1,19 @@
+--- a/ggml/src/ggml-spacemit/ime.cpp
++++ b/ggml/src/ggml-spacemit/ime.cpp
+@@ -585,10 +585,12 @@
+             }
+             uint8_t * b_col_zp = block_type_has_zp<BLOC_TYPE>() ? b_col : nullptr;
+ 
+-            // Direct IME-from-DRAM GEMV path, decode only (gemm_m == 1), q4_0 only:
+-            // q8_0 always loses to the staged TCM path here.
+-            if constexpr (std::is_same_v<BLOC_TYPE, block_q4_0> && INTER_SIZE == 256 && NB_COLS == 32) {
+-                if (gemm_m == 1 && a_row != quant_a_buffer) {
++            // Stream large single-row products directly from repacked weights.
++            constexpr bool q4_direct = std::is_same_v<BLOC_TYPE, block_q4_0> && INTER_SIZE == 256 && NB_COLS == 32;
++            constexpr bool q6_direct = std::is_same_v<BLOC_TYPE, block_q6_K> && INTER_SIZE == 32 && NB_COLS == 32;
++            if constexpr (q4_direct || q6_direct) {
++                if (gemm_m == 1 && a_row != quant_a_buffer &&
++                    (q4_direct || (global_spine_env_info.use_ime2 && gemm_n >= 4 * NB_COLS * nth))) {
+                     spacemit_kernels::rvv::memcpy1d(a_row, quant_a_buffer, gemm_workspace_size);
+                     constexpr int64_t tile_cols = 4 * NB_COLS;
+                     for (int64_t ni = (int64_t) ith * tile_cols; ni < gemm_n; ni += tile_cols * nth) {
