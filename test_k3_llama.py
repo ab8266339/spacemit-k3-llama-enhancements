@@ -1,4 +1,5 @@
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 from k3_llama import configuration, fixed_prompt, check_round
 
@@ -8,7 +9,9 @@ class BenchmarkTests(unittest.TestCase):
         def settings(name):
             return configuration(Path("/runtime/bin/llama-server"), Path("/model.gguf"), name, 8000, [])
         old, oldenv = settings("legacy64")
-        new, newenv = settings("standalone64")
+        with patch.dict("os.environ", {"GGML_SPACEMIT_WORKERS": "2"}):
+            new, newenv = settings("standalone64")
+        self.assertEqual(newenv["GGML_SPACEMIT_WORKERS"], "8")
         wide, _ = settings("standalone128")
         self.assertEqual(old[old.index("-ub") + 1], new[new.index("-ub") + 1])
         self.assertEqual(wide[wide.index("-ub") + 1], "128")

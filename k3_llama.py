@@ -7,6 +7,7 @@ import json
 import os
 from pathlib import Path
 import shutil
+import signal
 import socket
 import statistics
 import struct
@@ -31,7 +32,7 @@ def configuration(server, model, profile, port, lib_dirs):
     existing = env.get("LD_LIBRARY_PATH", "").split(os.pathsep)
     dirs = [str(server.parent.parent / "lib"), *(str(d) for d in lib_dirs), *existing]
     env["LD_LIBRARY_PATH"] = os.pathsep.join(dict.fromkeys(d for d in dirs if d))
-    env.update(SPACEMIT_PERFER_CORE_ID="8,9,10,11,12,13,14,15", SPACEMIT_PERFER_CORE_ARCH="a064",
+    env.update(GGML_SPACEMIT_WORKERS="8", SPACEMIT_PERFER_CORE_ID="8,9,10,11,12,13,14,15", SPACEMIT_PERFER_CORE_ARCH="a064",
                GGML_SPACEMIT_BACKEND="1" if standalone else "0")
     device = ["--device", "SPACEMIT0", "-ngl", "99"] if standalone else ["--device", "none", "-ngl", "0", "--no-op-offload"]
     args = [str(server), "-m", str(model), "-t", "8", "-tb", "8", "-np", "1", "-c", "1024",
@@ -143,6 +144,10 @@ def main():
     if opts.command == "serve":
         args, env = configuration(server, model, opts.profile, opts.port, opts.lib_dir)
         os.execve(server, args, env)
+    # Unwind the active session on a normal service-manager termination.
+    def terminate(signum, _frame):
+        raise SystemExit(128 + signum)
+    signal.signal(signal.SIGTERM, terminate)
     if len(set(opts.profiles)) != len(opts.profiles):
         parser.error("Profiles in one run must be unique")
     opts.out.mkdir(parents=True, exist_ok=True)
