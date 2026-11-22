@@ -1,0 +1,647 @@
+{
+  "model": "Qwen3.6-35B-A3B",
+  "quantization": "Q4_0 (mixed tensor types)",
+  "gguf_bytes": 20836243072,
+  "gguf_sha256": "52312daa5b2190c1f5723d33c3315c01c55af4206f6c6e6eb63f3d8dd52bb85e",
+  "board": "SpacemiT K3, 8 A100, 31 GiB RAM",
+  "os": "Bianbu 4.0.4, Linux 6.18.3",
+  "runtime": "SpacemiT llama.cpp v0.2.5 / 5105f9dfb, spine-runtime 0.7.2",
+  "date": "2026-11-22",
+  "protocol": "One slot, 8 threads, context 1024, four rounds of 128 uncached input tokens and 64 greedy output tokens. Exclude the first round, report the median of three. Exact per-round token IDs match across configurations. Profiling is a separate pass.",
+  "profiles": {
+    "legacy64": {
+      "rounds": [
+        {
+          "label": "春",
+          "warmup": true,
+          "prompt_sha256": "3ede86130d089e337fd5fe5a31bf4e4998f4df313394428a9c5cc91df52a8d6e",
+          "pp_tps": 34.06921960460009,
+          "tg_tps": 7.560221665699238,
+          "output_sha256": "19b401527bd886ea5d2c40b236408e1673ba46039658b970a588e8fd9fd785ea"
+        },
+        {
+          "label": "夏",
+          "warmup": false,
+          "prompt_sha256": "1f25ed035f8ea35a128e34d761ab410b0d087315ab35a7538c96b0953c6eed36",
+          "pp_tps": 34.63399310188265,
+          "tg_tps": 7.588191040297631,
+          "output_sha256": "2faf1bae59346c9ecee320e81b16aac3d17b7fd2e2f13446515789b993c84e91"
+        },
+        {
+          "label": "秋",
+          "warmup": false,
+          "prompt_sha256": "166a04f98c5755f6f75f60c24ef359a828f9ff1339be3894eb077d5dd554119c",
+          "pp_tps": 34.59500599466588,
+          "tg_tps": 7.571120765024498,
+          "output_sha256": "19b401527bd886ea5d2c40b236408e1673ba46039658b970a588e8fd9fd785ea"
+        },
+        {
+          "label": "冬",
+          "warmup": false,
+          "prompt_sha256": "95237fcfb93025c3c15821a555ab0aecd8109e6d08b048d627d3295f90d793e2",
+          "pp_tps": 34.624811761399336,
+          "tg_tps": 7.595153713252566,
+          "output_sha256": "396577a059a5cbb9d82fb5e7d25d287dcd519ec8de6177da279355653563a55d"
+        }
+      ],
+      "median_pp_tps": 34.624811761399336,
+      "median_tg_tps": 7.588191040297631,
+      "checks": [
+        {
+          "question": "只回答一个整数：8乘以3再乘以5是多少？",
+          "answer": "120"
+        },
+        {
+          "question": "Which is larger, 13 or 29? Answer only the number.",
+          "answer": "29"
+        }
+      ]
+    },
+    "standalone64": {
+      "rounds": [
+        {
+          "label": "春",
+          "warmup": true,
+          "prompt_sha256": "3ede86130d089e337fd5fe5a31bf4e4998f4df313394428a9c5cc91df52a8d6e",
+          "pp_tps": 62.82230172079119,
+          "tg_tps": 8.77162204834918,
+          "output_sha256": "b2c89b81461cd8e9a718242528c3d6085b0b5b08ccf7400176d0acd7be6ba874"
+        },
+        {
+          "label": "夏",
+          "warmup": false,
+          "prompt_sha256": "1f25ed035f8ea35a128e34d761ab410b0d087315ab35a7538c96b0953c6eed36",
+          "pp_tps": 64.94508081603495,
+          "tg_tps": 8.824741886805455,
+          "output_sha256": "b2c89b81461cd8e9a718242528c3d6085b0b5b08ccf7400176d0acd7be6ba874"
+        },
+        {
+          "label": "秋",
+          "warmup": false,
+          "prompt_sha256": "166a04f98c5755f6f75f60c24ef359a828f9ff1339be3894eb077d5dd554119c",
+          "pp_tps": 64.87122049119677,
+          "tg_tps": 8.81791509215561,
+          "output_sha256": "b2c89b81461cd8e9a718242528c3d6085b0b5b08ccf7400176d0acd7be6ba874"
+        },
+        {
+          "label": "冬",
+          "warmup": false,
+          "prompt_sha256": "95237fcfb93025c3c15821a555ab0aecd8109e6d08b048d627d3295f90d793e2",
+          "pp_tps": 64.93018990051478,
+          "tg_tps": 8.815932152586154,
+          "output_sha256": "25552b4bbb260a5a8d65b8d0d35e117d81d678da0ab493a0d1bd94bcffca1c3e"
+        }
+      ],
+      "median_pp_tps": 64.93018990051478,
+      "median_tg_tps": 8.81791509215561,
+      "checks": [
+        {
+          "question": "只回答一个整数：8乘以3再乘以5是多少？",
+          "answer": "120"
+        },
+        {
+          "question": "Which is larger, 13 or 29? Answer only the number.",
+          "answer": "29"
+        }
+      ]
+    },
+    "standalone128": {
+      "rounds": [
+        {
+          "label": "春",
+          "warmup": true,
+          "prompt_sha256": "3ede86130d089e337fd5fe5a31bf4e4998f4df313394428a9c5cc91df52a8d6e",
+          "pp_tps": 82.05059829629626,
+          "tg_tps": 8.884460134369702,
+          "output_sha256": "b2c89b81461cd8e9a718242528c3d6085b0b5b08ccf7400176d0acd7be6ba874"
+        },
+        {
+          "label": "夏",
+          "warmup": false,
+          "prompt_sha256": "1f25ed035f8ea35a128e34d761ab410b0d087315ab35a7538c96b0953c6eed36",
+          "pp_tps": 83.17629475599453,
+          "tg_tps": 8.86725591224288,
+          "output_sha256": "25552b4bbb260a5a8d65b8d0d35e117d81d678da0ab493a0d1bd94bcffca1c3e"
+        },
+        {
+          "label": "秋",
+          "warmup": false,
+          "prompt_sha256": "166a04f98c5755f6f75f60c24ef359a828f9ff1339be3894eb077d5dd554119c",
+          "pp_tps": 83.25706855764284,
+          "tg_tps": 8.900535247108527,
+          "output_sha256": "b2c89b81461cd8e9a718242528c3d6085b0b5b08ccf7400176d0acd7be6ba874"
+        },
+        {
+          "label": "冬",
+          "warmup": false,
+          "prompt_sha256": "95237fcfb93025c3c15821a555ab0aecd8109e6d08b048d627d3295f90d793e2",
+          "pp_tps": 83.34147214897288,
+          "tg_tps": 8.894442032591778,
+          "output_sha256": "b2c89b81461cd8e9a718242528c3d6085b0b5b08ccf7400176d0acd7be6ba874"
+        }
+      ],
+      "median_pp_tps": 83.25706855764284,
+      "median_tg_tps": 8.894442032591778,
+      "checks": [
+        {
+          "question": "只回答一个整数：8乘以3再乘以5是多少？",
+          "answer": "120"
+        },
+        {
+          "question": "Which is larger, 13 or 29? Answer only the number.",
+          "answer": "29"
+        }
+      ]
+    }
+  },
+  "sampling": {
+    "legacy64": {
+      "prefill": {
+        "sample_count": 23239,
+        "by_cpu": {
+          "8": 2905,
+          "9": 2905,
+          "10": 2905,
+          "11": 2904,
+          "12": 2905,
+          "13": 2905,
+          "14": 2905,
+          "15": 2905
+        },
+        "exclusive_function_groups": {
+          "IME2 GEMM kernel": 7559,
+          "ggml_vec_dot_f32": 4677,
+          "other": 4225,
+          "Gated DeltaNet body": 1559,
+          "RVV memcpy1d": 1419,
+          "ggml_vec_dot_f16_f32": 1261,
+          "wait or synchronization function": 1003,
+          "Flash Attention body": 902,
+          "matmul outer function": 491,
+          "routed matmul outer function": 143
+        },
+        "hottest_functions": [
+          [
+            "spacemit_kernels::ime2::gemm_kernel_i8i4_hp_m1(unsigned long, unsigned char const*, unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long, unsigned long, unsigned long)",
+            5106
+          ],
+          [
+            "ggml_vec_dot_f32",
+            4637
+          ],
+          [
+            "ggml_compute_forward_gated_delta_net",
+            1559
+          ],
+          [
+            "spacemit_kernels::rvv::memcpy1d(void*, void const*, long)",
+            1419
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_kernel_i8i4_hp_m4(unsigned long, unsigned char const*, unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long, unsigned long, unsigned long)",
+            1300
+          ],
+          [
+            "ggml_vec_dot_f16_f32",
+            1261
+          ],
+          [
+            "spert::detail::barrier_coro(spert::detail::Tile*, spert::detail::Barrier*)",
+            987
+          ],
+          [
+            "ggml_compute_forward_ssm_conv",
+            810
+          ],
+          [
+            "ggml_compute_forward_flash_attn_ext_tiled(ggml_compute_params const*, ggml_tensor*, int, int)",
+            799
+          ],
+          [
+            "void spacemit_kernels::rvv::forward_concat<int>(ggml_compute_params*, ggml_tensor*)",
+            733
+          ],
+          [
+            "void",
+            693
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_kernel_i8i8_m4(unsigned long, unsigned char const*, unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long, unsigned long, unsigned long)",
+            670
+          ]
+        ],
+        "tcm_smi_free_blocks_histogram": {
+          "8": 62
+        },
+        "a100_frequency_khz_observed": [
+          1800000
+        ],
+        "a100_worker_ticks": {
+          "8": 1462,
+          "9": 1463,
+          "10": 1464,
+          "11": 1463,
+          "12": 1463,
+          "13": 1464,
+          "14": 1463,
+          "15": 1463
+        }
+      },
+      "decode": {
+        "sample_count": 19108,
+        "by_cpu": {
+          "9": 2390,
+          "8": 2386,
+          "10": 2388,
+          "11": 2389,
+          "12": 2390,
+          "13": 2389,
+          "14": 2388,
+          "15": 2388
+        },
+        "exclusive_function_groups": {
+          "IME2 GEMM kernel": 5777,
+          "wait or synchronization function": 4793,
+          "other": 2238,
+          "matmul outer function": 1672,
+          "RVV memcpy1d": 1599,
+          "ggml_vec_dot_f32": 1430,
+          "Gated DeltaNet body": 1293,
+          "ggml_vec_dot_f16_f32": 199,
+          "routed matmul outer function": 66,
+          "Flash Attention body": 41
+        },
+        "hottest_functions": [
+          [
+            "spert::detail::barrier_coro(spert::detail::Tile*, spert::detail::Barrier*)",
+            4726
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_kernel_i8i4_hp_m1(unsigned long, unsigned char const*, unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long, unsigned long, unsigned long)",
+            4463
+          ],
+          [
+            "spacemit_kernels::rvv::memcpy1d(void*, void const*, long)",
+            1599
+          ],
+          [
+            "ggml::cpu::riscv64_spacemit::tensor_traits<block_q6_K, 32l, 32l>::forward_mul_mat(ggml_compute_params*, ggml_tensor*) [clone .isra.0]",
+            1523
+          ],
+          [
+            "ggml_vec_dot_f32",
+            1423
+          ],
+          [
+            "ggml_compute_forward_gated_delta_net",
+            1293
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_kernel_i8i8_m1(unsigned long, unsigned char const*, unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long, unsigned long, unsigned long)",
+            1177
+          ],
+          [
+            "ggml_compute_forward_dup_bytes(ggml_compute_params const*, ggml_tensor*)",
+            876
+          ],
+          [
+            "void spacemit_kernels::rvv::forward_concat<int>(ggml_compute_params*, ggml_tensor*)",
+            230
+          ],
+          [
+            "ggml_graph_compute_spert_kernel",
+            211
+          ],
+          [
+            "ggml_vec_dot_f16_f32",
+            199
+          ],
+          [
+            "ggml_compute_forward_rms_norm_mul_fused",
+            109
+          ]
+        ],
+        "tcm_smi_free_blocks_histogram": {
+          "8": 49
+        },
+        "a100_frequency_khz_observed": [
+          1800000
+        ],
+        "a100_worker_ticks": {
+          "8": 1214,
+          "9": 1215,
+          "10": 1214,
+          "11": 1214,
+          "12": 1214,
+          "13": 1214,
+          "14": 1214,
+          "15": 1215
+        }
+      }
+    },
+    "standalone64": {
+      "prefill": {
+        "sample_count": 11060,
+        "by_cpu": {
+          "8": 1383,
+          "9": 1383,
+          "10": 1383,
+          "11": 1383,
+          "12": 1381,
+          "13": 1382,
+          "14": 1382,
+          "15": 1383
+        },
+        "exclusive_function_groups": {
+          "IME2 GEMM kernel": 3572,
+          "other": 2527,
+          "Gated DeltaNet body": 1619,
+          "RVV memcpy1d": 1129,
+          "wait or synchronization function": 1099,
+          "Flash Attention body": 524,
+          "routed matmul outer function": 263,
+          "matmul outer function": 219,
+          "ggml_vec_dot_f32": 108
+        },
+        "hottest_functions": [
+          [
+            "spacemit_kernels::ime2::gemm_kernel_i8i4_hp_al_m8(unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long, unsigned long)",
+            2675
+          ],
+          [
+            "spacemit_kernels::rvv::memcpy1d(void*, void const*, long)",
+            1129
+          ],
+          [
+            "spert::detail::barrier_coro(spert::detail::Tile*, spert::detail::Barrier*)",
+            1089
+          ],
+          [
+            "spacemit_kernels::rvv::forward_gated_delta_net(ggml::spacemit::context&, ggml_tensor*)",
+            1008
+          ],
+          [
+            "spacemit_kernels::rvv::gdn_recurrent_transposed(float*, float const*, float const*, float, float const*, float, float, float, float*, long)",
+            611
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_i8i8_k32(spacemit_kernels::a_pack, unsigned long, unsigned char const*, unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long, unsigned long, unsigned long)",
+            566
+          ],
+          [
+            "spacemit_kernels::rvv::quantize_a_i8_r8_hp(unsigned long, float const*, unsigned long, unsigned char*)",
+            382
+          ],
+          [
+            "void mlir::speir::spekernel::spe_pack_cast_q41<(mlir::speir::spekernel::ime2::q41_zero_point_mode)1>(void*, long, long, void*, long, long, long, long, long, long)",
+            353
+          ],
+          [
+            "spacemit_kernels::rvv::(anonymous namespace)::flash_attn_ext_f16_one_chunk_inner_vlen1024_vf16_m1(float const*, char const*, char const*, unsigned short const*, float const*, float*, float, float, float, long, long, long, long, long)",
+            287
+          ],
+          [
+            "ggml::cpu::riscv64_spacemit::tensor_traits<block_q4_0, 256l, 32l>::forward_mul_mat_id(ggml::spacemit::context&, ggml_tensor*) const",
+            261
+          ],
+          [
+            "void spacemit_kernels::rvv::forward_binary<(ggml_op)2, float>(ggml::spacemit::context&, ggml_tensor*)",
+            252
+          ],
+          [
+            "ggml::cpu::riscv64_spacemit::tensor_traits_f16<ggml::cpu::riscv64_spacemit::Q41Block<32ul, 32ul, 2ul>, 32l, 32l,",
+            241
+          ]
+        ],
+        "tcm_smi_free_blocks_histogram": {
+          "8": 30
+        },
+        "a100_frequency_khz_observed": [
+          1800000
+        ],
+        "a100_worker_ticks": {
+          "8": 697,
+          "9": 697,
+          "10": 697,
+          "11": 697,
+          "12": 697,
+          "13": 697,
+          "14": 697,
+          "15": 697
+        }
+      },
+      "decode": {
+        "sample_count": 16627,
+        "by_cpu": {
+          "9": 2080,
+          "10": 2080,
+          "8": 2073,
+          "11": 2080,
+          "12": 2078,
+          "13": 2080,
+          "15": 2076,
+          "14": 2080
+        },
+        "exclusive_function_groups": {
+          "IME2 GEMM kernel": 5672,
+          "wait or synchronization function": 3788,
+          "RVV memcpy1d": 3048,
+          "matmul outer function": 2116,
+          "other": 1368,
+          "Gated DeltaNet body": 515,
+          "routed matmul outer function": 65,
+          "ggml_vec_dot_f32": 30,
+          "Flash Attention body": 25
+        },
+        "hottest_functions": [
+          [
+            "spert::detail::barrier_coro(spert::detail::Tile*, spert::detail::Barrier*)",
+            3748
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_kernel_i8i4_m1_q41(unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long)",
+            3143
+          ],
+          [
+            "spacemit_kernels::rvv::memcpy1d(void*, void const*, long)",
+            3048
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_kernel_i8i4_hp_al_m1(unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long)",
+            1996
+          ],
+          [
+            "ggml::cpu::riscv64_spacemit::tensor_traits<block_q6_K, 32l, 32l>::forward_mul_mat(ggml::spacemit::context&, ggml_tensor*) const",
+            1570
+          ],
+          [
+            "ggml::cpu::riscv64_spacemit::tensor_traits<block_q8_0, 32l, 32l>::forward_mul_mat(ggml::spacemit::context&, ggml_tensor*) const",
+            538
+          ],
+          [
+            "spacemit_kernels::rvv::gdn_recurrent_rows_lookahead(float*, float const*, float const*, float const*, float const*, float, float, float, float, long, float*)",
+            503
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_i8i8_k32(spacemit_kernels::a_pack, unsigned long, unsigned char const*, unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long, unsigned long, unsigned long)",
+            462
+          ],
+          [
+            "spacemit_kernels::rvv::forward_ssm_conv_concat_f32(ggml::spacemit::context&, ggml_tensor*)",
+            351
+          ],
+          [
+            "ggml_spacemit_get_tensor_traits(ggml_tensor const*)",
+            198
+          ],
+          [
+            "spacemit_kernels::rvv::forward_concat_dim0_transposed_f32(ggml::spacemit::context&, ggml_tensor*, long)",
+            144
+          ],
+          [
+            "spert::detail::worker_main(spert::detail::WorkerPool*, unsigned int)",
+            109
+          ]
+        ],
+        "tcm_smi_free_blocks_histogram": {
+          "8": 42
+        },
+        "a100_frequency_khz_observed": [
+          1800000
+        ],
+        "a100_worker_ticks": {
+          "8": 1039,
+          "9": 1040,
+          "10": 1040,
+          "11": 1040,
+          "12": 1040,
+          "13": 1040,
+          "14": 1041,
+          "15": 1040
+        }
+      }
+    }
+  },
+  "sampling_note": "User-mode cpu-clock samples on cores 8-15 for the server PID. Fractions inside a function are not matrix instruction counts or hardware utilization. Prefill is 512 in / 1 out; decode is 1 in / 96 out. No dedicated IME-busy or DDR-bandwidth evidence in this test.",
+  "scratch_bytes_per_worker": {
+    "15": 393216,
+    "14": 393216,
+    "13": 393216,
+    "11": 393216,
+    "12": 393216,
+    "10": 393216,
+    "9": 393216,
+    "8": 393216
+  },
+  "prefill_callchain": {
+    "phase": "independent predominantly-prefill diagnostic, 384 input tokens and 1 output",
+    "stacks": 3240,
+    "leaf_f32_dot": 662,
+    "leaf_f32_dot_gdn_parent": 582,
+    "any_gdn_frame": 805,
+    "dot_without_caller": 0
+  },
+  "next_token_probe": {
+    "protocol": "Same 12 short raw token prefixes, canonical top-10 logits before sampling, temperature 1, no truncation filters. Compare highest-probability token. This is a numerical smoke test, not a quality benchmark.",
+    "agree": 11,
+    "total": 12,
+    "rows": [
+      {
+        "prefix": "The capital of France is",
+        "input_count": 5,
+        "legacy_top_token": 11751,
+        "standalone_top_token": 11751,
+        "legacy_top_logprob": -0.6086578369140625,
+        "standalone_top_logprob": -0.5021188855171204
+      },
+      {
+        "prefix": "The chemical symbol for sodium is",
+        "input_count": 6,
+        "legacy_top_token": 12444,
+        "standalone_top_token": 12444,
+        "legacy_top_logprob": -1.093777060508728,
+        "standalone_top_logprob": -1.080030918121338
+      },
+      {
+        "prefix": "In SQL, to retrieve all columns from table t, write: SELECT",
+        "input_count": 14,
+        "legacy_top_token": 348,
+        "standalone_top_token": 348,
+        "legacy_top_logprob": -0.2341630905866623,
+        "standalone_top_logprob": -0.22825942933559418
+      },
+      {
+        "prefix": "The sequence 2, 4, 8, 16,",
+        "input_count": 15,
+        "legacy_top_token": 220,
+        "standalone_top_token": 220,
+        "legacy_top_logprob": -0.4535030126571655,
+        "standalone_top_logprob": -0.5501272678375244
+      },
+      {
+        "prefix": "一千克等于多少克？答案是",
+        "input_count": 7,
+        "legacy_top_token": 16,
+        "standalone_top_token": 16,
+        "legacy_top_logprob": -0.20751194655895233,
+        "standalone_top_logprob": -0.21702776849269867
+      },
+      {
+        "prefix": "十二生肖中，鼠之后的一个生肖是",
+        "input_count": 8,
+        "legacy_top_token": 10992,
+        "standalone_top_token": 10992,
+        "legacy_top_logprob": -1.2755582332611084,
+        "standalone_top_logprob": -1.35985267162323
+      },
+      {
+        "prefix": "地球绕着太阳公转一周大约需要",
+        "input_count": 9,
+        "legacy_top_token": 98425,
+        "standalone_top_token": 98425,
+        "legacy_top_logprob": -0.7124866247177124,
+        "standalone_top_logprob": -0.8288729190826416
+      },
+      {
+        "prefix": "数据按升序排列，最小的元素在数组的",
+        "input_count": 11,
+        "legacy_top_token": 110372,
+        "standalone_top_token": 110372,
+        "legacy_top_logprob": -1.5158666372299194,
+        "standalone_top_logprob": -1.453019142150879
+      },
+      {
+        "prefix": "if temperature < 0:\n    print(",
+        "input_count": 10,
+        "legacy_top_token": 328,
+        "standalone_top_token": 328,
+        "legacy_top_logprob": -1.1056557893753052,
+        "standalone_top_logprob": -1.1436539888381958
+      },
+      {
+        "prefix": "To reduce memory traffic when decoding one token at a time,",
+        "input_count": 12,
+        "legacy_top_token": 567,
+        "standalone_top_token": 567,
+        "legacy_top_logprob": -0.8207348585128784,
+        "standalone_top_logprob": -0.8389869332313538
+      },
+      {
+        "prefix": "若函数 f(x)=2x+1，则 f(3)=",
+        "input_count": 15,
+        "legacy_top_token": 198,
+        "standalone_top_token": 10992,
+        "legacy_top_logprob": -1.531112790107727,
+        "standalone_top_logprob": -1.5434995889663696
+      },
+      {
+        "prefix": "RISC-V 是一种开放的",
+        "input_count": 6,
+        "legacy_top_token": 109454,
+        "standalone_top_token": 109454,
+        "legacy_top_logprob": -0.12449351698160172,
+        "standalone_top_logprob": -0.11430028080940247
+      }
+    ]
+  }
+}
