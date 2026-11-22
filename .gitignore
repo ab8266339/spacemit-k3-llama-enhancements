@@ -2,3 +2,6 @@ __pycache__/
 runs/
 *.gguf
 *.so*
+*.f32
+build-q6/
+q6_gemv

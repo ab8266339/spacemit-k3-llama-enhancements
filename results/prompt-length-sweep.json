@@ -1,0 +1,153 @@
+{
+  "model": "Qwen3.6-35B-A3B Q4_0",
+  "weights_sha256": "52312daa5b2190c1f5723d33c3315c01c55af4206f6c6e6eb63f3d8dd52bb85e",
+  "prompt_tokens": 512,
+  "generated_tokens": 64,
+  "context": 1024,
+  "threads": 8,
+  "profile_selection": "Lowest warm median wall time for a single request, across the tested standalone batch sizes. Each profile excludes its first round.",
+  "ranking": {
+    "prompt_tokens": 512,
+    "generated_tokens": 64,
+    "fastest_measured_profile": "standalone512",
+    "median_request_seconds": {
+      "standalone128": 12.760920558008365,
+      "standalone256": 11.99318861500069,
+      "standalone512": 11.404310942991287
+    }
+  },
+  "profiles": {
+    "standalone128": {
+      "median_tps": {
+        "prompt_per_second": 91.77615723550139,
+        "predicted_per_second": 8.844332172900797
+      },
+      "median_seconds": 12.760920558008365,
+      "rounds": [
+        {
+          "warmup": true,
+          "label": "春",
+          "prompt_hash": "0e12c4ca4b162240faa5d20b3a699f609c8eb7cca58e17a640feb2e554a84b73",
+          "wall_seconds": 12.867417998000747,
+          "pp_tps": 89.6344891105475,
+          "tg_tps": 8.810987945309778
+        },
+        {
+          "warmup": false,
+          "label": "夏",
+          "prompt_hash": "57ea0e533ace3161046f63568f0ce505ae59e8757df58e7541b85cd72feae76d",
+          "wall_seconds": 12.825499051992665,
+          "pp_tps": 91.77615723550139,
+          "tg_tps": 8.759085117730447
+        },
+        {
+          "warmup": false,
+          "label": "秋",
+          "prompt_hash": "25e77d383cc4a73c29b5bc0557d26bda83f6f98b3d8fbacd75b3a8c8c4d892c9",
+          "wall_seconds": 12.760920558008365,
+          "pp_tps": 91.56077865289059,
+          "tg_tps": 8.853705170212482
+        },
+        {
+          "warmup": false,
+          "label": "冬",
+          "prompt_hash": "866c6644506040f60b1ba974c1780e2e8428a7217390165a29de66bfc191b697",
+          "wall_seconds": 12.750237665997702,
+          "pp_tps": 91.86102360092701,
+          "tg_tps": 8.844332172900797
+        }
+      ]
+    },
+    "standalone256": {
+      "median_tps": {
+        "prompt_per_second": 108.82877704937128,
+        "predicted_per_second": 8.706852707692988
+      },
+      "median_seconds": 11.99318861500069,
+      "rounds": [
+        {
+          "warmup": true,
+          "label": "春",
+          "prompt_hash": "0e12c4ca4b162240faa5d20b3a699f609c8eb7cca58e17a640feb2e554a84b73",
+          "wall_seconds": 11.990274935989873,
+          "pp_tps": 107.98908297864263,
+          "tg_tps": 8.696073474367081
+        },
+        {
+          "warmup": false,
+          "label": "夏",
+          "prompt_hash": "57ea0e533ace3161046f63568f0ce505ae59e8757df58e7541b85cd72feae76d",
+          "wall_seconds": 11.994547875990975,
+          "pp_tps": 108.78278648382376,
+          "tg_tps": 8.706852707692988
+        },
+        {
+          "warmup": false,
+          "label": "秋",
+          "prompt_hash": "25e77d383cc4a73c29b5bc0557d26bda83f6f98b3d8fbacd75b3a8c8c4d892c9",
+          "wall_seconds": 11.99318861500069,
+          "pp_tps": 108.82877704937128,
+          "tg_tps": 8.706825031375665
+        },
+        {
+          "warmup": false,
+          "label": "冬",
+          "prompt_hash": "866c6644506040f60b1ba974c1780e2e8428a7217390165a29de66bfc191b697",
+          "wall_seconds": 11.99135912800557,
+          "pp_tps": 108.83088212318849,
+          "tg_tps": 8.708081472810258
+        }
+      ]
+    },
+    "standalone512": {
+      "median_tps": {
+        "prompt_per_second": 115.17951244422399,
+        "predicted_per_second": 9.122017407994681
+      },
+      "median_seconds": 11.404310942991287,
+      "rounds": [
+        {
+          "warmup": true,
+          "label": "春",
+          "prompt_hash": "0e12c4ca4b162240faa5d20b3a699f609c8eb7cca58e17a640feb2e554a84b73",
+          "wall_seconds": 11.48674528299307,
+          "pp_tps": 112.52992098069826,
+          "tg_tps": 9.088627097958089
+        },
+        {
+          "warmup": false,
+          "label": "夏",
+          "prompt_hash": "57ea0e533ace3161046f63568f0ce505ae59e8757df58e7541b85cd72feae76d",
+          "wall_seconds": 11.404310942991287,
+          "pp_tps": 115.17951244422399,
+          "tg_tps": 9.122017407994681
+        },
+        {
+          "warmup": false,
+          "label": "秋",
+          "prompt_hash": "25e77d383cc4a73c29b5bc0557d26bda83f6f98b3d8fbacd75b3a8c8c4d892c9",
+          "wall_seconds": 11.406934512997395,
+          "pp_tps": 115.15917607208243,
+          "tg_tps": 9.119705251126284
+        },
+        {
+          "warmup": false,
+          "label": "冬",
+          "prompt_hash": "866c6644506040f60b1ba974c1780e2e8428a7217390165a29de66bfc191b697",
+          "wall_seconds": 11.39544670500618,
+          "pp_tps": 115.20330345472657,
+          "tg_tps": 9.131980601933776
+        }
+      ]
+    }
+  },
+  "public_tool_short_run": {
+    "prompt_tokens": 128,
+    "generated_tokens": 64,
+    "profile": "standalone128",
+    "median_tps": {
+      "prompt_per_second": 82.78574015625809,
+      "predicted_per_second": 8.810394027391933
+    }
+  }
+}

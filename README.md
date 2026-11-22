@@ -33,6 +33,23 @@ The benchmark starts and stops each server in sequence. It verifies the server i
 
 These are medians of three measured rounds after one warm-up, with 128 uncached input tokens and 64 greedy output tokens. At matched batch sizes, the device change raised input throughput by 87.5% and generation by 16.2%. Increasing the batch size addresses a separate limit. The speedups above come from selecting settings already present in the vendor runtime. The model is [bartowski's Q4_0 GGUF](https://huggingface.co/bartowski/Qwen_Qwen3.6-35B-A3B-GGUF/blob/main/Qwen_Qwen3.6-35B-A3B-Q4_0.gguf), SHA-256 `52312daa5b2190c1f5723d33c3315c01c55af4206f6c6e6eb63f3d8dd52bb85e`.
 
+## Choose a batch size for a longer prompt
+
+For a 512-token prompt, the eight-core standalone device gave the following results. The output length remained 64 tokens. The command compares identical input IDs and ranks the tested profiles by the measured wall time of the whole request.
+
+```bash
+python3 k3_llama.py bench --model "$MODEL" --server "$SERVER" --out runs \
+  --prompt-tokens 512 --profiles standalone128 standalone256 standalone512
+```
+
+| Physical / logical batch | Prompt tokens/s | Generated tokens/s | Median request time |
+|---:|---:|---:|---:|
+| 128 | 91.78 | 8.84 | 12.76 s |
+| 256 | 108.83 | 8.71 | 11.99 s |
+| 512 | 115.18 | 9.12 | 11.40 s |
+
+For this workload, `serve --profile standalone512` was the fastest of the three measured configurations. The shorter 128-input benchmark and this sweep have different prompt lengths. [Per-round measurements and ranking](results/prompt-length-sweep.json).
+
 ## What the chip was doing
 
 - Linux sampled the test process on CPU IDs 8 through 15. On the legacy path, a separate diagnostic recorded that each worker's 384 KiB scratch buffer lies entirely inside a real `/dev/tcm` mapping. The platform TCM monitor nevertheless reported eight free blocks during these runs.
