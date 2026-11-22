@@ -1,0 +1,1502 @@
+{
+  "model": "Qwen3.6-35B-A3B, Q4_0 GGUF",
+  "weight_sha256": "52312daa5b2190c1f5723d33c3315c01c55af4206f6c6e6eb63f3d8dd52bb85e",
+  "hardware": "SpacemiT K3 Pico ITX / eight A100 cores / 31 GiB RAM",
+  "build": "standalone SPACEMIT0; v0.2.5 (5105f9dfb); spine-runtime 0.7.2; same native Bianbu GCC 15.2 Release build for all controlled variants",
+  "date": "2026-11-22",
+  "protocol": "Single slot, context 1024, threads and batch threads 8, batch and microbatch 128. Six requests with 128 uncached input tokens / 128 greedy output tokens. Exclude the first, take the median of five. Three independent control process launches. Separate 197 Hz user-mode perf pass for each, 1 input token / 128 output tokens. Classify the actual shared-object / ELF symbol containing each sample; categories count CPU instruction-pointer samples, not unit occupancy. Benchmarks after board restart used a 26 GiB cgroup limit and host-memory watchdog.",
+  "runs": {
+    "restartA": {
+      "backend_library_sha256": "e8b70a2f9f97d6777089e00a6c46fe803f2c4f8fd0354dfd23acc1905442c7a8",
+      "median_tg": 8.825642619709244,
+      "median_pp": 80.80496900056248,
+      "rounds": [
+        {
+          "label": "春",
+          "pp": 77.66971439389711,
+          "tg": 8.79643931218771,
+          "input_sha": "3ede86130d089e337fd5fe5a31bf4e4998f4df313394428a9c5cc91df52a8d6e",
+          "output_sha": "51580f0e9afdd91d7800b6da0ffc8c6919fb137084c773acd7acf123a89303f1"
+        },
+        {
+          "label": "夏",
+          "pp": 80.90947304545152,
+          "tg": 8.807369785118206,
+          "input_sha": "1f25ed035f8ea35a128e34d761ab410b0d087315ab35a7538c96b0953c6eed36",
+          "output_sha": "e05c6ffae7ce40ab79bafdcf5983a3a277eedd6c9090ec07f0d4ab90fc8511be"
+        },
+        {
+          "label": "秋",
+          "pp": 80.70816369381087,
+          "tg": 8.819299905918209,
+          "input_sha": "166a04f98c5755f6f75f60c24ef359a828f9ff1339be3894eb077d5dd554119c",
+          "output_sha": "6dd24d7f6b9ad7ade7c4c7914b40147412d7335afc803a8c8dd023bd1c04bfcc"
+        },
+        {
+          "label": "冬",
+          "pp": 80.65496875565135,
+          "tg": 8.833740995409585,
+          "input_sha": "95237fcfb93025c3c15821a555ab0aecd8109e6d08b048d627d3295f90d793e2",
+          "output_sha": "d76d520f7071093e3d74651b0b56270f3b7bedac46f36e5c46458a58dce259ef"
+        },
+        {
+          "label": "山",
+          "pp": 80.9973302520599,
+          "tg": 8.833707200862504,
+          "input_sha": "d28ea91efdbd3236b8965b067b4a18c4280dc44673e66b457dbb9abc0c875a29",
+          "output_sha": "6d30b06f1747490cbec384f8e3dff076c29caacea5fb663a3eabad401d430631"
+        },
+        {
+          "label": "河",
+          "pp": 80.80496900056248,
+          "tg": 8.825642619709244,
+          "input_sha": "f188ca4646e200814927e9200782c6fe62f29469346ce2d686831b2789cbc3f3",
+          "output_sha": "5b1853154e78dc7d141423dd3027c71700b2d9ec7f3923c75165fb8d3e122453"
+        }
+      ],
+      "matching_greedy_outputs_of_6": 6,
+      "matching_top10_records_of_12": 12,
+      "top10_record_sha256": "0238d5f51c22375508ee4c50e91e8814979ea41753772ba842a917c9ebc96b82",
+      "short_answers": [
+        "120",
+        "29"
+      ],
+      "profile": {
+        "sample_count": 21744,
+        "sampled_by_cpu": {
+          "8": 2719,
+          "9": 2719,
+          "10": 2717,
+          "11": 2718,
+          "12": 2719,
+          "13": 2716,
+          "14": 2716,
+          "15": 2720
+        },
+        "category_counts": {
+          "IME2 GEMM kernel": 7609,
+          "RVV memcpy1d": 4742,
+          "wait or synchronization function": 3652,
+          "matmul outer function": 2300,
+          "other": 2125,
+          "Gated DeltaNet body": 980,
+          "ggml_vec_dot_f32": 118,
+          "routed matmul outer function": 109,
+          "Flash Attention body": 109
+        },
+        "pct_named_sync": 16.795437821927887,
+        "pct_rvv_copy": 21.80831493745401,
+        "top_functions": [
+          [
+            "spacemit_kernels::rvv::memcpy1d(void*, void const*, long)",
+            4742
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_kernel_i8i4_m1_q41(unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long)",
+            3706
+          ],
+          [
+            "spert::detail::barrier_coro(spert::detail::Tile*, spert::detail::Barrier*)",
+            3592
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_kernel_i8i4_hp_al_m1(unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long)",
+            2903
+          ],
+          [
+            "ggml::cpu::riscv64_spacemit::tensor_traits<block_q6_K, 32l, 32l>::forward_mul_mat(ggml::spacemit::context&, ggml_tensor*) const",
+            1368
+          ],
+          [
+            "spacemit_kernels::rvv::gdn_recurrent_rows_lookahead(float*, float const*, float const*, float const*, float const*, float, float, float, float, long, float*)",
+            938
+          ],
+          [
+            "ggml::cpu::riscv64_spacemit::tensor_traits<block_q8_0, 32l, 32l>::forward_mul_mat(ggml::spacemit::context&, ggml_tensor*) const",
+            898
+          ]
+        ],
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 1,
+          "prompt_ms": 131.642,
+          "prompt_per_token_ms": 131.642,
+          "prompt_per_second": 7.596359824372161,
+          "predicted_n": 128,
+          "predicted_ms": 14358.323,
+          "predicted_per_token_ms": 113.05766141732283,
+          "predicted_per_second": 8.84504409045541
+        }
+      },
+      "resource_guard": {
+        "status": 0,
+        "start_available_mib": 31394,
+        "minimum_available_mib": 8858,
+        "end_available_mib": 30979,
+        "seconds": 190.367081258
+      }
+    },
+    "restartLeader": {
+      "backend_library_sha256": "4f96b5454c9cfbdd5750c53ec40217bd068233f62bbca9271f307407482a4991",
+      "median_tg": 8.85513617770069,
+      "median_pp": 81.43363921844065,
+      "rounds": [
+        {
+          "label": "春",
+          "pp": 80.41832607997729,
+          "tg": 8.860927739134288,
+          "input_sha": "3ede86130d089e337fd5fe5a31bf4e4998f4df313394428a9c5cc91df52a8d6e",
+          "output_sha": "51580f0e9afdd91d7800b6da0ffc8c6919fb137084c773acd7acf123a89303f1"
+        },
+        {
+          "label": "夏",
+          "pp": 81.43363921844065,
+          "tg": 8.85513617770069,
+          "input_sha": "1f25ed035f8ea35a128e34d761ab410b0d087315ab35a7538c96b0953c6eed36",
+          "output_sha": "e05c6ffae7ce40ab79bafdcf5983a3a277eedd6c9090ec07f0d4ab90fc8511be"
+        },
+        {
+          "label": "秋",
+          "pp": 81.5515695810097,
+          "tg": 8.855215826711095,
+          "input_sha": "166a04f98c5755f6f75f60c24ef359a828f9ff1339be3894eb077d5dd554119c",
+          "output_sha": "6dd24d7f6b9ad7ade7c4c7914b40147412d7335afc803a8c8dd023bd1c04bfcc"
+        },
+        {
+          "label": "冬",
+          "pp": 81.36556850694818,
+          "tg": 8.851510269773124,
+          "input_sha": "95237fcfb93025c3c15821a555ab0aecd8109e6d08b048d627d3295f90d793e2",
+          "output_sha": "d76d520f7071093e3d74651b0b56270f3b7bedac46f36e5c46458a58dce259ef"
+        },
+        {
+          "label": "山",
+          "pp": 81.61787023268744,
+          "tg": 8.847080512194411,
+          "input_sha": "d28ea91efdbd3236b8965b067b4a18c4280dc44673e66b457dbb9abc0c875a29",
+          "output_sha": "6d30b06f1747490cbec384f8e3dff076c29caacea5fb663a3eabad401d430631"
+        },
+        {
+          "label": "河",
+          "pp": 81.13333122048616,
+          "tg": 8.860354670927823,
+          "input_sha": "f188ca4646e200814927e9200782c6fe62f29469346ce2d686831b2789cbc3f3",
+          "output_sha": "5b1853154e78dc7d141423dd3027c71700b2d9ec7f3923c75165fb8d3e122453"
+        }
+      ],
+      "matching_greedy_outputs_of_6": 6,
+      "matching_top10_records_of_12": 12,
+      "top10_record_sha256": "0238d5f51c22375508ee4c50e91e8814979ea41753772ba842a917c9ebc96b82",
+      "short_answers": [
+        "120",
+        "29"
+      ],
+      "profile": {
+        "sample_count": 21650,
+        "sampled_by_cpu": {
+          "8": 2708,
+          "9": 2709,
+          "10": 2706,
+          "11": 2705,
+          "12": 2703,
+          "13": 2705,
+          "14": 2706,
+          "15": 2708
+        },
+        "category_counts": {
+          "IME2 GEMM kernel": 8038,
+          "RVV memcpy1d": 4606,
+          "wait or synchronization function": 3660,
+          "matmul outer function": 2381,
+          "other": 1688,
+          "Gated DeltaNet body": 949,
+          "ggml_vec_dot_f32": 116,
+          "routed matmul outer function": 114,
+          "Flash Attention body": 98
+        },
+        "pct_named_sync": 16.905311778290994,
+        "pct_rvv_copy": 21.274826789838336,
+        "top_functions": [
+          [
+            "spacemit_kernels::rvv::memcpy1d(void*, void const*, long)",
+            4606
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_kernel_i8i4_m1_q41(unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long)",
+            3877
+          ],
+          [
+            "spert::detail::barrier_coro(spert::detail::Tile*, spert::detail::Barrier*)",
+            3580
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_kernel_i8i4_hp_al_m1(unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long)",
+            3141
+          ],
+          [
+            "ggml::cpu::riscv64_spacemit::tensor_traits<block_q6_K, 32l, 32l>::forward_mul_mat(ggml::spacemit::context&, ggml_tensor*) const",
+            1463
+          ],
+          [
+            "spacemit_kernels::rvv::gdn_recurrent_rows_lookahead(float*, float const*, float const*, float const*, float const*, float, float, float, float, long, float*)",
+            901
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_i8i8_k32(spacemit_kernels::a_pack, unsigned long, unsigned char const*, unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long, unsigned long, unsigned long)",
+            893
+          ]
+        ],
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 1,
+          "prompt_ms": 130.229,
+          "prompt_per_token_ms": 130.229,
+          "prompt_per_second": 7.678781223844151,
+          "predicted_n": 128,
+          "predicted_ms": 14305.845,
+          "predicted_per_token_ms": 112.64444881889763,
+          "predicted_per_second": 8.877490284565505
+        }
+      },
+      "resource_guard": {
+        "status": 0,
+        "start_available_mib": 30980,
+        "minimum_available_mib": 9790,
+        "end_available_mib": 31529,
+        "seconds": 183.83929912399998
+      }
+    },
+    "restartGate": {
+      "backend_library_sha256": "53ec457a5a677b3881cdf0d998249cd4bf56a2b264a459919d8b502679d2d366",
+      "median_tg": 8.8389988880261,
+      "median_pp": 80.99594640599472,
+      "rounds": [
+        {
+          "label": "春",
+          "pp": 79.78348756063232,
+          "tg": 8.777167146496655,
+          "input_sha": "3ede86130d089e337fd5fe5a31bf4e4998f4df313394428a9c5cc91df52a8d6e",
+          "output_sha": "51580f0e9afdd91d7800b6da0ffc8c6919fb137084c773acd7acf123a89303f1"
+        },
+        {
+          "label": "夏",
+          "pp": 80.96146803381912,
+          "tg": 8.8389988880261,
+          "input_sha": "1f25ed035f8ea35a128e34d761ab410b0d087315ab35a7538c96b0953c6eed36",
+          "output_sha": "e05c6ffae7ce40ab79bafdcf5983a3a277eedd6c9090ec07f0d4ab90fc8511be"
+        },
+        {
+          "label": "秋",
+          "pp": 80.99594640599472,
+          "tg": 8.832895594965416,
+          "input_sha": "166a04f98c5755f6f75f60c24ef359a828f9ff1339be3894eb077d5dd554119c",
+          "output_sha": "6dd24d7f6b9ad7ade7c4c7914b40147412d7335afc803a8c8dd023bd1c04bfcc"
+        },
+        {
+          "label": "冬",
+          "pp": 78.94402498578391,
+          "tg": 8.80578080789087,
+          "input_sha": "95237fcfb93025c3c15821a555ab0aecd8109e6d08b048d627d3295f90d793e2",
+          "output_sha": "d76d520f7071093e3d74651b0b56270f3b7bedac46f36e5c46458a58dce259ef"
+        },
+        {
+          "label": "山",
+          "pp": 81.17089008954163,
+          "tg": 8.83931202590489,
+          "input_sha": "d28ea91efdbd3236b8965b067b4a18c4280dc44673e66b457dbb9abc0c875a29",
+          "output_sha": "6d30b06f1747490cbec384f8e3dff076c29caacea5fb663a3eabad401d430631"
+        },
+        {
+          "label": "河",
+          "pp": 81.16080237598248,
+          "tg": 8.84172559293865,
+          "input_sha": "f188ca4646e200814927e9200782c6fe62f29469346ce2d686831b2789cbc3f3",
+          "output_sha": "5b1853154e78dc7d141423dd3027c71700b2d9ec7f3923c75165fb8d3e122453"
+        }
+      ],
+      "matching_greedy_outputs_of_6": 6,
+      "matching_top10_records_of_12": 12,
+      "top10_record_sha256": "0238d5f51c22375508ee4c50e91e8814979ea41753772ba842a917c9ebc96b82",
+      "short_answers": [
+        "120",
+        "29"
+      ],
+      "profile": {
+        "sample_count": 21605,
+        "sampled_by_cpu": {
+          "8": 2700,
+          "9": 2699,
+          "10": 2701,
+          "11": 2702,
+          "12": 2701,
+          "13": 2700,
+          "14": 2699,
+          "15": 2703
+        },
+        "category_counts": {
+          "IME2 GEMM kernel": 8087,
+          "RVV memcpy1d": 5008,
+          "wait or synchronization function": 3089,
+          "other": 2193,
+          "matmul outer function": 2103,
+          "Gated DeltaNet body": 783,
+          "ggml_vec_dot_f32": 128,
+          "routed matmul outer function": 114,
+          "Flash Attention body": 100
+        },
+        "pct_named_sync": 14.297616292524879,
+        "pct_rvv_copy": 23.179819486230038,
+        "top_functions": [
+          [
+            "spacemit_kernels::rvv::memcpy1d(void*, void const*, long)",
+            5008
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_kernel_i8i4_m1_q41(unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long)",
+            4022
+          ],
+          [
+            "spert::detail::barrier_coro(spert::detail::Tile*, spert::detail::Barrier*)",
+            3048
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_kernel_i8i4_hp_al_m1(unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long)",
+            2875
+          ],
+          [
+            "ggml::cpu::riscv64_spacemit::tensor_traits<block_q6_K, 32l, 32l>::forward_mul_mat(ggml::spacemit::context&, ggml_tensor*) const",
+            1216
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_i8i8_k32(spacemit_kernels::a_pack, unsigned long, unsigned char const*, unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long, unsigned long, unsigned long)",
+            1055
+          ],
+          [
+            "ggml::cpu::riscv64_spacemit::tensor_traits<block_q8_0, 32l, 32l>::forward_mul_mat(ggml::spacemit::context&, ggml_tensor*) const",
+            850
+          ]
+        ],
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 1,
+          "prompt_ms": 132.545,
+          "prompt_per_token_ms": 132.545,
+          "prompt_per_second": 7.54460749179524,
+          "predicted_n": 128,
+          "predicted_ms": 14339.266,
+          "predicted_per_token_ms": 112.90760629921259,
+          "predicted_per_second": 8.856799225288102
+        }
+      },
+      "resource_guard": {
+        "status": 0,
+        "start_available_mib": 31530,
+        "minimum_available_mib": 9774,
+        "end_available_mib": 31514,
+        "seconds": 180.351647486
+      }
+    },
+    "restartB": {
+      "backend_library_sha256": "e8b70a2f9f97d6777089e00a6c46fe803f2c4f8fd0354dfd23acc1905442c7a8",
+      "median_tg": 8.819582250417106,
+      "median_pp": 80.73137580770795,
+      "rounds": [
+        {
+          "label": "春",
+          "pp": 79.08137102384427,
+          "tg": 8.812873345756016,
+          "input_sha": "3ede86130d089e337fd5fe5a31bf4e4998f4df313394428a9c5cc91df52a8d6e",
+          "output_sha": "51580f0e9afdd91d7800b6da0ffc8c6919fb137084c773acd7acf123a89303f1"
+        },
+        {
+          "label": "夏",
+          "pp": 80.73514394508496,
+          "tg": 8.815286567613388,
+          "input_sha": "1f25ed035f8ea35a128e34d761ab410b0d087315ab35a7538c96b0953c6eed36",
+          "output_sha": "e05c6ffae7ce40ab79bafdcf5983a3a277eedd6c9090ec07f0d4ab90fc8511be"
+        },
+        {
+          "label": "秋",
+          "pp": 80.7707039608565,
+          "tg": 8.823631993127849,
+          "input_sha": "166a04f98c5755f6f75f60c24ef359a828f9ff1339be3894eb077d5dd554119c",
+          "output_sha": "6dd24d7f6b9ad7ade7c4c7914b40147412d7335afc803a8c8dd023bd1c04bfcc"
+        },
+        {
+          "label": "冬",
+          "pp": 80.61544856513949,
+          "tg": 8.819582250417106,
+          "input_sha": "95237fcfb93025c3c15821a555ab0aecd8109e6d08b048d627d3295f90d793e2",
+          "output_sha": "d76d520f7071093e3d74651b0b56270f3b7bedac46f36e5c46458a58dce259ef"
+        },
+        {
+          "label": "山",
+          "pp": 80.73137580770795,
+          "tg": 8.81722054548464,
+          "input_sha": "d28ea91efdbd3236b8965b067b4a18c4280dc44673e66b457dbb9abc0c875a29",
+          "output_sha": "6d30b06f1747490cbec384f8e3dff076c29caacea5fb663a3eabad401d430631"
+        },
+        {
+          "label": "河",
+          "pp": 80.69305245426658,
+          "tg": 8.822619362050983,
+          "input_sha": "f188ca4646e200814927e9200782c6fe62f29469346ce2d686831b2789cbc3f3",
+          "output_sha": "5b1853154e78dc7d141423dd3027c71700b2d9ec7f3923c75165fb8d3e122453"
+        }
+      ],
+      "matching_greedy_outputs_of_6": 6,
+      "matching_top10_records_of_12": 12,
+      "top10_record_sha256": "0238d5f51c22375508ee4c50e91e8814979ea41753772ba842a917c9ebc96b82",
+      "short_answers": [
+        "120",
+        "29"
+      ],
+      "profile": {
+        "sample_count": 21681,
+        "sampled_by_cpu": {
+          "9": 2710,
+          "8": 2703,
+          "10": 2711,
+          "11": 2712,
+          "12": 2713,
+          "13": 2711,
+          "14": 2710,
+          "15": 2711
+        },
+        "category_counts": {
+          "IME2 GEMM kernel": 7377,
+          "wait or synchronization function": 4439,
+          "RVV memcpy1d": 3828,
+          "matmul outer function": 2890,
+          "other": 1798,
+          "Gated DeltaNet body": 1095,
+          "routed matmul outer function": 119,
+          "Flash Attention body": 93,
+          "ggml_vec_dot_f32": 42
+        },
+        "pct_named_sync": 20.474147871408146,
+        "pct_rvv_copy": 17.65601217656012,
+        "top_functions": [
+          [
+            "spert::detail::barrier_coro(spert::detail::Tile*, spert::detail::Barrier*)",
+            4370
+          ],
+          [
+            "spacemit_kernels::rvv::memcpy1d(void*, void const*, long)",
+            3828
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_kernel_i8i4_m1_q41(unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long)",
+            3778
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_kernel_i8i4_hp_al_m1(unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long)",
+            2787
+          ],
+          [
+            "ggml::cpu::riscv64_spacemit::tensor_traits<block_q6_K, 32l, 32l>::forward_mul_mat(ggml::spacemit::context&, ggml_tensor*) const",
+            2101
+          ],
+          [
+            "spacemit_kernels::rvv::gdn_recurrent_rows_lookahead(float*, float const*, float const*, float const*, float const*, float, float, float, float, long, float*)",
+            1053
+          ],
+          [
+            "ggml::cpu::riscv64_spacemit::tensor_traits<block_q8_0, 32l, 32l>::forward_mul_mat(ggml::spacemit::context&, ggml_tensor*) const",
+            770
+          ]
+        ],
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 1,
+          "prompt_ms": 131.275,
+          "prompt_per_token_ms": 131.275,
+          "prompt_per_second": 7.617596648257474,
+          "predicted_n": 128,
+          "predicted_ms": 14360.146,
+          "predicted_per_token_ms": 113.0720157480315,
+          "predicted_per_second": 8.843921224756349
+        }
+      },
+      "resource_guard": {
+        "status": 0,
+        "start_available_mib": 31516,
+        "minimum_available_mib": 9724,
+        "end_available_mib": 31517,
+        "seconds": 180.363840461
+      }
+    },
+    "capRVV": {
+      "backend_library_sha256": "e475d597f6c8a37232ba87246d6a052219a09aea8ad89a45fe7b8ee862ff25e9",
+      "median_tg": 8.730564268742716,
+      "median_pp": 80.54356840728869,
+      "rounds": [
+        {
+          "label": "春",
+          "pp": 77.68677904544798,
+          "tg": 8.715313993891456,
+          "input_sha": "3ede86130d089e337fd5fe5a31bf4e4998f4df313394428a9c5cc91df52a8d6e",
+          "output_sha": "51580f0e9afdd91d7800b6da0ffc8c6919fb137084c773acd7acf123a89303f1"
+        },
+        {
+          "label": "夏",
+          "pp": 80.50835997552043,
+          "tg": 8.726716416279764,
+          "input_sha": "1f25ed035f8ea35a128e34d761ab410b0d087315ab35a7538c96b0953c6eed36",
+          "output_sha": "e05c6ffae7ce40ab79bafdcf5983a3a277eedd6c9090ec07f0d4ab90fc8511be"
+        },
+        {
+          "label": "秋",
+          "pp": 80.60194540351664,
+          "tg": 8.730564268742716,
+          "input_sha": "166a04f98c5755f6f75f60c24ef359a828f9ff1339be3894eb077d5dd554119c",
+          "output_sha": "6dd24d7f6b9ad7ade7c4c7914b40147412d7335afc803a8c8dd023bd1c04bfcc"
+        },
+        {
+          "label": "冬",
+          "pp": 80.42464211034262,
+          "tg": 8.732582537516585,
+          "input_sha": "95237fcfb93025c3c15821a555ab0aecd8109e6d08b048d627d3295f90d793e2",
+          "output_sha": "d76d520f7071093e3d74651b0b56270f3b7bedac46f36e5c46458a58dce259ef"
+        },
+        {
+          "label": "山",
+          "pp": 80.84814759839946,
+          "tg": 8.732895386652038,
+          "input_sha": "d28ea91efdbd3236b8965b067b4a18c4280dc44673e66b457dbb9abc0c875a29",
+          "output_sha": "6d30b06f1747490cbec384f8e3dff076c29caacea5fb663a3eabad401d430631"
+        },
+        {
+          "label": "河",
+          "pp": 80.54356840728869,
+          "tg": 8.724145274192331,
+          "input_sha": "f188ca4646e200814927e9200782c6fe62f29469346ce2d686831b2789cbc3f3",
+          "output_sha": "5b1853154e78dc7d141423dd3027c71700b2d9ec7f3923c75165fb8d3e122453"
+        }
+      ],
+      "matching_greedy_outputs_of_6": 6,
+      "matching_top10_records_of_12": 12,
+      "top10_record_sha256": "0238d5f51c22375508ee4c50e91e8814979ea41753772ba842a917c9ebc96b82",
+      "short_answers": [
+        "120",
+        "29"
+      ],
+      "profile": {
+        "sample_count": 21895,
+        "sampled_by_cpu": {
+          "8": 2735,
+          "9": 2737,
+          "10": 2737,
+          "11": 2737,
+          "12": 2737,
+          "13": 2737,
+          "14": 2738,
+          "15": 2737
+        },
+        "category_counts": {
+          "IME2 GEMM kernel": 7402,
+          "wait or synchronization function": 4397,
+          "RVV memcpy1d": 4168,
+          "matmul outer function": 2724,
+          "other": 1893,
+          "Gated DeltaNet body": 1055,
+          "routed matmul outer function": 129,
+          "Flash Attention body": 71,
+          "ggml_vec_dot_f32": 56
+        },
+        "pct_named_sync": 20.082210550353963,
+        "pct_rvv_copy": 19.036309659739665,
+        "top_functions": [
+          [
+            "spert::detail::barrier_coro(spert::detail::Tile*, spert::detail::Barrier*)",
+            4304
+          ],
+          [
+            "spacemit_kernels::rvv::memcpy1d(void*, void const*, long)",
+            4168
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_kernel_i8i4_m1_q41(unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long)",
+            3817
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_kernel_i8i4_hp_al_m1(unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long)",
+            2774
+          ],
+          [
+            "ggml::cpu::riscv64_spacemit::tensor_traits<block_q6_K, 32l, 32l>::forward_mul_mat(ggml::spacemit::context&, ggml_tensor*) const",
+            2060
+          ],
+          [
+            "spacemit_kernels::rvv::gdn_recurrent_rows_lookahead(float*, float const*, float const*, float const*, float const*, float, float, float, float, long, float*)",
+            1006
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_i8i8_k32(spacemit_kernels::a_pack, unsigned long, unsigned char const*, unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long, unsigned long, unsigned long)",
+            694
+          ]
+        ],
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 1,
+          "prompt_ms": 136.642,
+          "prompt_per_token_ms": 136.642,
+          "prompt_per_second": 7.318394051609315,
+          "predicted_n": 128,
+          "predicted_ms": 14511.358,
+          "predicted_per_token_ms": 114.26266141732283,
+          "predicted_per_second": 8.751765341327808
+        }
+      },
+      "resource_guard": {
+        "status": 0,
+        "start_available_mib": 31465,
+        "minimum_available_mib": 9571,
+        "end_available_mib": 31488,
+        "seconds": 181.8694930449999
+      }
+    },
+    "capDMA": {
+      "backend_library_sha256": "e475d597f6c8a37232ba87246d6a052219a09aea8ad89a45fe7b8ee862ff25e9",
+      "median_tg": 8.69609337933544,
+      "median_pp": 81.53863402403351,
+      "rounds": [
+        {
+          "label": "春",
+          "pp": 80.3662188133551,
+          "tg": 8.683299355651327,
+          "input_sha": "3ede86130d089e337fd5fe5a31bf4e4998f4df313394428a9c5cc91df52a8d6e",
+          "output_sha": "51580f0e9afdd91d7800b6da0ffc8c6919fb137084c773acd7acf123a89303f1"
+        },
+        {
+          "label": "夏",
+          "pp": 81.56918723952028,
+          "tg": 8.695090758604222,
+          "input_sha": "1f25ed035f8ea35a128e34d761ab410b0d087315ab35a7538c96b0953c6eed36",
+          "output_sha": "e05c6ffae7ce40ab79bafdcf5983a3a277eedd6c9090ec07f0d4ab90fc8511be"
+        },
+        {
+          "label": "秋",
+          "pp": 81.40474055418821,
+          "tg": 8.69609337933544,
+          "input_sha": "166a04f98c5755f6f75f60c24ef359a828f9ff1339be3894eb077d5dd554119c",
+          "output_sha": "6dd24d7f6b9ad7ade7c4c7914b40147412d7335afc803a8c8dd023bd1c04bfcc"
+        },
+        {
+          "label": "冬",
+          "pp": 81.43519349129217,
+          "tg": 8.69984930764955,
+          "input_sha": "95237fcfb93025c3c15821a555ab0aecd8109e6d08b048d627d3295f90d793e2",
+          "output_sha": "d76d520f7071093e3d74651b0b56270f3b7bedac46f36e5c46458a58dce259ef"
+        },
+        {
+          "label": "山",
+          "pp": 81.79310944173646,
+          "tg": 8.698005786981867,
+          "input_sha": "d28ea91efdbd3236b8965b067b4a18c4280dc44673e66b457dbb9abc0c875a29",
+          "output_sha": "6d30b06f1747490cbec384f8e3dff076c29caacea5fb663a3eabad401d430631"
+        },
+        {
+          "label": "河",
+          "pp": 81.53863402403351,
+          "tg": 8.695784352216789,
+          "input_sha": "f188ca4646e200814927e9200782c6fe62f29469346ce2d686831b2789cbc3f3",
+          "output_sha": "5b1853154e78dc7d141423dd3027c71700b2d9ec7f3923c75165fb8d3e122453"
+        }
+      ],
+      "matching_greedy_outputs_of_6": 6,
+      "matching_top10_records_of_12": 12,
+      "top10_record_sha256": "0238d5f51c22375508ee4c50e91e8814979ea41753772ba842a917c9ebc96b82",
+      "short_answers": [
+        "120",
+        "29"
+      ],
+      "profile": {
+        "sample_count": 21986,
+        "sampled_by_cpu": {
+          "8": 2739,
+          "9": 2751,
+          "10": 2748,
+          "11": 2749,
+          "12": 2748,
+          "13": 2757,
+          "14": 2748,
+          "15": 2746
+        },
+        "category_counts": {
+          "IME2 GEMM kernel": 7230,
+          "wait or synchronization function": 4707,
+          "RVV memcpy1d": 4036,
+          "matmul outer function": 2610,
+          "other": 2155,
+          "Gated DeltaNet body": 929,
+          "routed matmul outer function": 144,
+          "Flash Attention body": 118,
+          "ggml_vec_dot_f32": 57
+        },
+        "pct_named_sync": 21.409078504502865,
+        "pct_rvv_copy": 18.3571363595015,
+        "top_functions": [
+          [
+            "spert::detail::barrier_coro(spert::detail::Tile*, spert::detail::Barrier*)",
+            4620
+          ],
+          [
+            "spacemit_kernels::rvv::memcpy1d(void*, void const*, long)",
+            4036
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_kernel_i8i4_m1_q41(unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long)",
+            3662
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_kernel_i8i4_hp_al_m1(unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long)",
+            2729
+          ],
+          [
+            "ggml::cpu::riscv64_spacemit::tensor_traits<block_q6_K, 32l, 32l>::forward_mul_mat(ggml::spacemit::context&, ggml_tensor*) const",
+            2076
+          ],
+          [
+            "spacemit_kernels::rvv::gdn_recurrent_rows_lookahead(float*, float const*, float const*, float const*, float const*, float, float, float, float, long, float*)",
+            889
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_i8i8_k32(spacemit_kernels::a_pack, unsigned long, unsigned char const*, unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long, unsigned long, unsigned long)",
+            738
+          ]
+        ],
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 1,
+          "prompt_ms": 135.271,
+          "prompt_per_token_ms": 135.271,
+          "prompt_per_second": 7.39256751262281,
+          "predicted_n": 128,
+          "predicted_ms": 14559.557,
+          "predicted_per_token_ms": 114.64218110236222,
+          "predicted_per_second": 8.722792870689677
+        }
+      },
+      "resource_guard": {
+        "status": 0,
+        "start_available_mib": 31487,
+        "minimum_available_mib": 9034,
+        "end_available_mib": 30793,
+        "seconds": 181.83732867000003
+      }
+    },
+    "privateA": {
+      "backend_library_sha256": "853d6effa2735d85b2d2ec144ed93ae1dabbc875b5e5eb12bde405e12ed4603c",
+      "median_tg": 8.894211409102208,
+      "median_pp": 81.55759718575317,
+      "rounds": [
+        {
+          "label": "春",
+          "pp": 78.50367096658258,
+          "tg": 8.873173977649662,
+          "input_sha": "3ede86130d089e337fd5fe5a31bf4e4998f4df313394428a9c5cc91df52a8d6e",
+          "output_sha": "51580f0e9afdd91d7800b6da0ffc8c6919fb137084c773acd7acf123a89303f1"
+        },
+        {
+          "label": "夏",
+          "pp": 81.55759718575317,
+          "tg": 8.882650672486598,
+          "input_sha": "1f25ed035f8ea35a128e34d761ab410b0d087315ab35a7538c96b0953c6eed36",
+          "output_sha": "e05c6ffae7ce40ab79bafdcf5983a3a277eedd6c9090ec07f0d4ab90fc8511be"
+        },
+        {
+          "label": "秋",
+          "pp": 81.44213663445461,
+          "tg": 8.890770029592263,
+          "input_sha": "166a04f98c5755f6f75f60c24ef359a828f9ff1339be3894eb077d5dd554119c",
+          "output_sha": "6dd24d7f6b9ad7ade7c4c7914b40147412d7335afc803a8c8dd023bd1c04bfcc"
+        },
+        {
+          "label": "冬",
+          "pp": 81.26019323420013,
+          "tg": 8.894211409102208,
+          "input_sha": "95237fcfb93025c3c15821a555ab0aecd8109e6d08b048d627d3295f90d793e2",
+          "output_sha": "d76d520f7071093e3d74651b0b56270f3b7bedac46f36e5c46458a58dce259ef"
+        },
+        {
+          "label": "山",
+          "pp": 81.67739852380863,
+          "tg": 8.898286351198827,
+          "input_sha": "d28ea91efdbd3236b8965b067b4a18c4280dc44673e66b457dbb9abc0c875a29",
+          "output_sha": "6d30b06f1747490cbec384f8e3dff076c29caacea5fb663a3eabad401d430631"
+        },
+        {
+          "label": "河",
+          "pp": 81.60746300249158,
+          "tg": 8.899383153621853,
+          "input_sha": "f188ca4646e200814927e9200782c6fe62f29469346ce2d686831b2789cbc3f3",
+          "output_sha": "5b1853154e78dc7d141423dd3027c71700b2d9ec7f3923c75165fb8d3e122453"
+        }
+      ],
+      "matching_greedy_outputs_of_6": 6,
+      "matching_top10_records_of_12": 12,
+      "top10_record_sha256": "0238d5f51c22375508ee4c50e91e8814979ea41753772ba842a917c9ebc96b82",
+      "short_answers": [
+        "120",
+        "29"
+      ],
+      "profile": {
+        "sample_count": 21465,
+        "sampled_by_cpu": {
+          "8": 2680,
+          "9": 2683,
+          "10": 2684,
+          "11": 2684,
+          "12": 2681,
+          "13": 2684,
+          "14": 2682,
+          "15": 2687
+        },
+        "category_counts": {
+          "IME2 GEMM kernel": 7713,
+          "RVV memcpy1d": 4494,
+          "wait or synchronization function": 3577,
+          "matmul outer function": 2537,
+          "other": 1990,
+          "Gated DeltaNet body": 858,
+          "routed matmul outer function": 111,
+          "Flash Attention body": 96,
+          "ggml_vec_dot_f32": 89
+        },
+        "pct_named_sync": 16.66433729326811,
+        "pct_rvv_copy": 20.936408106219428,
+        "top_functions": [
+          [
+            "spacemit_kernels::rvv::memcpy1d(void*, void const*, long)",
+            4494
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_kernel_i8i4_m1_q41(unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long)",
+            3701
+          ],
+          [
+            "spert::detail::barrier_coro(spert::detail::Tile*, spert::detail::Barrier*)",
+            3510
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_kernel_i8i4_hp_al_m1(unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long)",
+            2971
+          ],
+          [
+            "ggml::cpu::riscv64_spacemit::tensor_traits<block_q6_K, 32l, 32l>::forward_mul_mat(ggml::spacemit::context&, ggml_tensor*) const",
+            1671
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_i8i8_k32(spacemit_kernels::a_pack, unsigned long, unsigned char const*, unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long, unsigned long, unsigned long)",
+            840
+          ],
+          [
+            "ggml::cpu::riscv64_spacemit::tensor_traits<block_q8_0, 32l, 32l>::forward_mul_mat(ggml::spacemit::context&, ggml_tensor*) const",
+            837
+          ]
+        ],
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 1,
+          "prompt_ms": 133.211,
+          "prompt_per_token_ms": 133.211,
+          "prompt_per_second": 7.506887569344873,
+          "predicted_n": 128,
+          "predicted_ms": 14258.495,
+          "predicted_per_token_ms": 112.27161417322836,
+          "predicted_per_second": 8.906970896998596
+        }
+      },
+      "resource_guard": {
+        "status": 0,
+        "start_available_mib": 30639,
+        "minimum_available_mib": 8901,
+        "end_available_mib": 30739,
+        "seconds": 180.35771762699983
+      }
+    },
+    "confirmCandidate": {
+      "backend_library_sha256": "853d6effa2735d85b2d2ec144ed93ae1dabbc875b5e5eb12bde405e12ed4603c",
+      "median_tg": 8.866389514035285,
+      "median_pp": 81.13744556501454,
+      "rounds": [
+        {
+          "label": "春",
+          "pp": 80.3685399861741,
+          "tg": 8.870253750720448,
+          "input_sha": "3ede86130d089e337fd5fe5a31bf4e4998f4df313394428a9c5cc91df52a8d6e",
+          "output_sha": "51580f0e9afdd91d7800b6da0ffc8c6919fb137084c773acd7acf123a89303f1"
+        },
+        {
+          "label": "夏",
+          "pp": 81.07428494697552,
+          "tg": 8.866389514035285,
+          "input_sha": "1f25ed035f8ea35a128e34d761ab410b0d087315ab35a7538c96b0953c6eed36",
+          "output_sha": "e05c6ffae7ce40ab79bafdcf5983a3a277eedd6c9090ec07f0d4ab90fc8511be"
+        },
+        {
+          "label": "秋",
+          "pp": 81.13744556501454,
+          "tg": 8.85752688921982,
+          "input_sha": "166a04f98c5755f6f75f60c24ef359a828f9ff1339be3894eb077d5dd554119c",
+          "output_sha": "6dd24d7f6b9ad7ade7c4c7914b40147412d7335afc803a8c8dd023bd1c04bfcc"
+        },
+        {
+          "label": "冬",
+          "pp": 81.00184089339967,
+          "tg": 8.868922562085075,
+          "input_sha": "95237fcfb93025c3c15821a555ab0aecd8109e6d08b048d627d3295f90d793e2",
+          "output_sha": "d76d520f7071093e3d74651b0b56270f3b7bedac46f36e5c46458a58dce259ef"
+        },
+        {
+          "label": "山",
+          "pp": 81.37725925205397,
+          "tg": 8.868074749351198,
+          "input_sha": "d28ea91efdbd3236b8965b067b4a18c4280dc44673e66b457dbb9abc0c875a29",
+          "output_sha": "6d30b06f1747490cbec384f8e3dff076c29caacea5fb663a3eabad401d430631"
+        },
+        {
+          "label": "河",
+          "pp": 81.20302278252308,
+          "tg": 8.86518881874919,
+          "input_sha": "f188ca4646e200814927e9200782c6fe62f29469346ce2d686831b2789cbc3f3",
+          "output_sha": "5b1853154e78dc7d141423dd3027c71700b2d9ec7f3923c75165fb8d3e122453"
+        }
+      ],
+      "matching_greedy_outputs_of_6": 6,
+      "matching_top10_records_of_12": 12,
+      "top10_record_sha256": "0238d5f51c22375508ee4c50e91e8814979ea41753772ba842a917c9ebc96b82",
+      "short_answers": [
+        "120",
+        "29"
+      ],
+      "profile": {
+        "sample_count": 21509,
+        "sampled_by_cpu": {
+          "8": 2689,
+          "9": 2690,
+          "10": 2689,
+          "11": 2690,
+          "12": 2688,
+          "13": 2687,
+          "14": 2688,
+          "15": 2688
+        },
+        "category_counts": {
+          "IME2 GEMM kernel": 7466,
+          "RVV memcpy1d": 4326,
+          "wait or synchronization function": 3935,
+          "matmul outer function": 2630,
+          "other": 1937,
+          "Gated DeltaNet body": 889,
+          "routed matmul outer function": 126,
+          "ggml_vec_dot_f32": 102,
+          "Flash Attention body": 98
+        },
+        "pct_named_sync": 18.29466734855177,
+        "pct_rvv_copy": 20.11251104188944,
+        "top_functions": [
+          [
+            "spacemit_kernels::rvv::memcpy1d(void*, void const*, long)",
+            4326
+          ],
+          [
+            "spert::detail::barrier_coro(spert::detail::Tile*, spert::detail::Barrier*)",
+            3872
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_kernel_i8i4_m1_q41(unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long)",
+            3652
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_kernel_i8i4_hp_al_m1(unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long)",
+            2896
+          ],
+          [
+            "ggml::cpu::riscv64_spacemit::tensor_traits<block_q6_K, 32l, 32l>::forward_mul_mat(ggml::spacemit::context&, ggml_tensor*) const",
+            1619
+          ],
+          [
+            "ggml::cpu::riscv64_spacemit::tensor_traits<block_q8_0, 32l, 32l>::forward_mul_mat(ggml::spacemit::context&, ggml_tensor*) const",
+            976
+          ],
+          [
+            "spacemit_kernels::rvv::gdn_recurrent_rows_lookahead(float*, float const*, float const*, float const*, float const*, float, float, float, float, long, float*)",
+            859
+          ]
+        ],
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 1,
+          "prompt_ms": 131.878,
+          "prompt_per_token_ms": 131.878,
+          "prompt_per_second": 7.5827658896859225,
+          "predicted_n": 128,
+          "predicted_ms": 14279.152,
+          "predicted_per_token_ms": 112.43426771653543,
+          "predicted_per_second": 8.894085587155315
+        }
+      },
+      "resource_guard": {
+        "status": 0,
+        "start_available_mib": 30672,
+        "minimum_available_mib": 8908,
+        "end_available_mib": 30743,
+        "seconds": 181.85287767
+      }
+    },
+    "confirmControl": {
+      "backend_library_sha256": "e8b70a2f9f97d6777089e00a6c46fe803f2c4f8fd0354dfd23acc1905442c7a8",
+      "median_tg": 8.907617485863542,
+      "median_pp": 81.12685197391771,
+      "rounds": [
+        {
+          "label": "春",
+          "pp": 78.29919468054845,
+          "tg": 8.885867538442572,
+          "input_sha": "3ede86130d089e337fd5fe5a31bf4e4998f4df313394428a9c5cc91df52a8d6e",
+          "output_sha": "51580f0e9afdd91d7800b6da0ffc8c6919fb137084c773acd7acf123a89303f1"
+        },
+        {
+          "label": "夏",
+          "pp": 81.00112325776394,
+          "tg": 8.896380217000226,
+          "input_sha": "1f25ed035f8ea35a128e34d761ab410b0d087315ab35a7538c96b0953c6eed36",
+          "output_sha": "e05c6ffae7ce40ab79bafdcf5983a3a277eedd6c9090ec07f0d4ab90fc8511be"
+        },
+        {
+          "label": "秋",
+          "pp": 81.32793265030577,
+          "tg": 8.89750397690404,
+          "input_sha": "166a04f98c5755f6f75f60c24ef359a828f9ff1339be3894eb077d5dd554119c",
+          "output_sha": "6dd24d7f6b9ad7ade7c4c7914b40147412d7335afc803a8c8dd023bd1c04bfcc"
+        },
+        {
+          "label": "冬",
+          "pp": 80.95875404477526,
+          "tg": 8.910282922530703,
+          "input_sha": "95237fcfb93025c3c15821a555ab0aecd8109e6d08b048d627d3295f90d793e2",
+          "output_sha": "d76d520f7071093e3d74651b0b56270f3b7bedac46f36e5c46458a58dce259ef"
+        },
+        {
+          "label": "山",
+          "pp": 81.43845765741004,
+          "tg": 8.910089757578206,
+          "input_sha": "d28ea91efdbd3236b8965b067b4a18c4280dc44673e66b457dbb9abc0c875a29",
+          "output_sha": "6d30b06f1747490cbec384f8e3dff076c29caacea5fb663a3eabad401d430631"
+        },
+        {
+          "label": "河",
+          "pp": 81.12685197391771,
+          "tg": 8.907617485863542,
+          "input_sha": "f188ca4646e200814927e9200782c6fe62f29469346ce2d686831b2789cbc3f3",
+          "output_sha": "5b1853154e78dc7d141423dd3027c71700b2d9ec7f3923c75165fb8d3e122453"
+        }
+      ],
+      "matching_greedy_outputs_of_6": 6,
+      "matching_top10_records_of_12": 12,
+      "top10_record_sha256": "0238d5f51c22375508ee4c50e91e8814979ea41753772ba842a917c9ebc96b82",
+      "short_answers": [
+        "120",
+        "29"
+      ],
+      "profile": {
+        "sample_count": 21385,
+        "sampled_by_cpu": {
+          "8": 2670,
+          "9": 2671,
+          "10": 2672,
+          "11": 2674,
+          "12": 2674,
+          "13": 2674,
+          "14": 2675,
+          "15": 2675
+        },
+        "category_counts": {
+          "IME2 GEMM kernel": 7848,
+          "RVV memcpy1d": 4675,
+          "wait or synchronization function": 3502,
+          "matmul outer function": 2380,
+          "other": 1660,
+          "Gated DeltaNet body": 1030,
+          "ggml_vec_dot_f32": 122,
+          "routed matmul outer function": 92,
+          "Flash Attention body": 76
+        },
+        "pct_named_sync": 16.375964461070843,
+        "pct_rvv_copy": 21.861117605798455,
+        "top_functions": [
+          [
+            "spacemit_kernels::rvv::memcpy1d(void*, void const*, long)",
+            4675
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_kernel_i8i4_m1_q41(unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long)",
+            3857
+          ],
+          [
+            "spert::detail::barrier_coro(spert::detail::Tile*, spert::detail::Barrier*)",
+            3465
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_kernel_i8i4_hp_al_m1(unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long)",
+            2806
+          ],
+          [
+            "ggml::cpu::riscv64_spacemit::tensor_traits<block_q6_K, 32l, 32l>::forward_mul_mat(ggml::spacemit::context&, ggml_tensor*) const",
+            1513
+          ],
+          [
+            "spacemit_kernels::ime2::gemm_i8i8_k32(spacemit_kernels::a_pack, unsigned long, unsigned char const*, unsigned char const*, unsigned char const*, float*, unsigned long, unsigned long, unsigned long, unsigned long)",
+            1017
+          ],
+          [
+            "spacemit_kernels::rvv::gdn_recurrent_rows_lookahead(float*, float const*, float const*, float const*, float const*, float, float, float, float, long, float*)",
+            971
+          ]
+        ],
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 1,
+          "prompt_ms": 133.014,
+          "prompt_per_token_ms": 133.014,
+          "prompt_per_second": 7.518005623468206,
+          "predicted_n": 128,
+          "predicted_ms": 14231.889,
+          "predicted_per_token_ms": 112.06211811023621,
+          "predicted_per_second": 8.923622155850149
+        }
+      },
+      "resource_guard": {
+        "status": 0,
+        "start_available_mib": 30750,
+        "minimum_available_mib": 8696,
+        "end_available_mib": 30626,
+        "seconds": 182.34761783699992
+      }
+    }
+  },
+  "static_sources": [
+    "ggml/src/ggml-spacemit/ggml-spacemit.cpp",
+    "ggml/src/ggml-spacemit/ime.cpp",
+    "ggml/src/ggml-spacemit/rvv_kernels.cpp"
+  ],
+  "copy_probe": {
+    "rounds": 5,
+    "iterations_per_round": 32,
+    "allocations": "Eight separate 4 MiB vendor MMZ blocks. Ordinary DDR is a separate RVV control. Tile-owned TCM from alloc_shared. Two final destination buffers checked bytewise for each tile per round. Outer median of the slowest worker mean time per transfer.",
+    "measurements": [
+      {
+        "workers": 1,
+        "bytes": 4096,
+        "method": "RVV_host",
+        "us_per_wave": 0.173,
+        "errors": 0
+      },
+      {
+        "workers": 1,
+        "bytes": 4096,
+        "method": "RVV_MMZ",
+        "us_per_wave": 0.139,
+        "errors": 0
+      },
+      {
+        "workers": 1,
+        "bytes": 4096,
+        "method": "DMA_MMZ_wait",
+        "us_per_wave": 7.424,
+        "errors": 0
+      },
+      {
+        "workers": 1,
+        "bytes": 16384,
+        "method": "RVV_host",
+        "us_per_wave": 1.001,
+        "errors": 0
+      },
+      {
+        "workers": 1,
+        "bytes": 16384,
+        "method": "RVV_MMZ",
+        "us_per_wave": 0.898,
+        "errors": 0
+      },
+      {
+        "workers": 1,
+        "bytes": 16384,
+        "method": "DMA_MMZ_wait",
+        "us_per_wave": 9.807,
+        "errors": 0
+      },
+      {
+        "workers": 1,
+        "bytes": 34816,
+        "method": "RVV_host",
+        "us_per_wave": 1.475,
+        "errors": 0
+      },
+      {
+        "workers": 1,
+        "bytes": 34816,
+        "method": "RVV_MMZ",
+        "us_per_wave": 2.21,
+        "errors": 0
+      },
+      {
+        "workers": 1,
+        "bytes": 34816,
+        "method": "DMA_MMZ_wait",
+        "us_per_wave": 12.594,
+        "errors": 0
+      },
+      {
+        "workers": 1,
+        "bytes": 69632,
+        "method": "RVV_host",
+        "us_per_wave": 3.472,
+        "errors": 0
+      },
+      {
+        "workers": 1,
+        "bytes": 69632,
+        "method": "RVV_MMZ",
+        "us_per_wave": 3.467,
+        "errors": 0
+      },
+      {
+        "workers": 1,
+        "bytes": 69632,
+        "method": "DMA_MMZ_wait",
+        "us_per_wave": 17.588,
+        "errors": 0
+      },
+      {
+        "workers": 1,
+        "bytes": 131072,
+        "method": "RVV_host",
+        "us_per_wave": 6.5,
+        "errors": 0
+      },
+      {
+        "workers": 1,
+        "bytes": 131072,
+        "method": "RVV_MMZ",
+        "us_per_wave": 6.343,
+        "errors": 0
+      },
+      {
+        "workers": 1,
+        "bytes": 131072,
+        "method": "DMA_MMZ_wait",
+        "us_per_wave": 25.406,
+        "errors": 0
+      },
+      {
+        "workers": 8,
+        "bytes": 4096,
+        "method": "RVV_host",
+        "us_per_wave": 0.401,
+        "errors": 0
+      },
+      {
+        "workers": 8,
+        "bytes": 4096,
+        "method": "RVV_MMZ",
+        "us_per_wave": 0.793,
+        "errors": 0
+      },
+      {
+        "workers": 8,
+        "bytes": 4096,
+        "method": "DMA_MMZ_wait",
+        "us_per_wave": 34.949,
+        "errors": 0
+      },
+      {
+        "workers": 8,
+        "bytes": 16384,
+        "method": "RVV_host",
+        "us_per_wave": 4.449,
+        "errors": 0
+      },
+      {
+        "workers": 8,
+        "bytes": 16384,
+        "method": "RVV_MMZ",
+        "us_per_wave": 5.942,
+        "errors": 0
+      },
+      {
+        "workers": 8,
+        "bytes": 16384,
+        "method": "DMA_MMZ_wait",
+        "us_per_wave": 33.188,
+        "errors": 0
+      },
+      {
+        "workers": 8,
+        "bytes": 34816,
+        "method": "RVV_host",
+        "us_per_wave": 10.545,
+        "errors": 0
+      },
+      {
+        "workers": 8,
+        "bytes": 34816,
+        "method": "RVV_MMZ",
+        "us_per_wave": 13.221,
+        "errors": 0
+      },
+      {
+        "workers": 8,
+        "bytes": 34816,
+        "method": "DMA_MMZ_wait",
+        "us_per_wave": 34.199,
+        "errors": 0
+      },
+      {
+        "workers": 8,
+        "bytes": 69632,
+        "method": "RVV_host",
+        "us_per_wave": 21.675,
+        "errors": 0
+      },
+      {
+        "workers": 8,
+        "bytes": 69632,
+        "method": "RVV_MMZ",
+        "us_per_wave": 24.954,
+        "errors": 0
+      },
+      {
+        "workers": 8,
+        "bytes": 69632,
+        "method": "DMA_MMZ_wait",
+        "us_per_wave": 36.768,
+        "errors": 0
+      },
+      {
+        "workers": 8,
+        "bytes": 131072,
+        "method": "RVV_host",
+        "us_per_wave": 41.064,
+        "errors": 0
+      },
+      {
+        "workers": 8,
+        "bytes": 131072,
+        "method": "RVV_MMZ",
+        "us_per_wave": 42.296,
+        "errors": 0
+      },
+      {
+        "workers": 8,
+        "bytes": 131072,
+        "method": "DMA_MMZ_wait",
+        "us_per_wave": 55.411,
+        "errors": 0
+      }
+    ]
+  },
+  "method_key": {
+    "restartA": "control before sync variants",
+    "restartB": "control after sync variants",
+    "restartLeader": "small contiguous routing op runs on tile zero",
+    "restartGate": "bounded-spin rendezvous with cooperative fallback; inline spin may move samples outside named synchronization functions",
+    "capRVV": "new MMZ tile schedule, RVV copy control",
+    "capDMA": "same tile schedule, at most one in-flight AIDMA request, RVV on busy/rejected lane; <=128 KiB per transfer",
+    "privateA": "duplicate the short single-token activation quantization into per-worker TCM",
+    "confirmCandidate": "second independent launch of privateA",
+    "confirmControl": "control immediately after confirmCandidate"
+  },
+  "initial_callgraph": {
+    "samples": 8212,
+    "memcpy_samples": 1497,
+    "memcpy_callers": {
+      "dense_q6_k": 541,
+      "get_rows": 356,
+      "dense_q8_0": 304,
+      "common_op_dispatch": 271,
+      "q4_0_moe": 25
+    },
+    "coroutine_barrier_leaf_samples": 1776,
+    "barrier_samples_without_symbolized_caller": 1772
+  },
+  "unbounded_dma_trial": {
+    "full_request_limit_s": 240,
+    "outcome": "failed to finish first measured request; no speed or correctness claim",
+    "lanes_with_accepted_requests": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "mapped_mmz_observation": {
+      "vma_count": 63,
+      "mapped_bytes": 70189056
+    },
+    "live_barrier_coro_sample_pct": 97.47,
+    "memory_recovery": "A later load encountered system MemAvailable=0. After stopping the experiment, about 11.8 GiB was available despite no running model; the device was restarted. The exact cause of the memory state was not established."
+  },
+  "capped_dma_lanes_with_accepted_requests": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "q8_operator_bytewise": [
+    {
+      "k": 2048,
+      "n": 512,
+      "base_median_ms": 0.046334,
+      "rvv_median_ms": 0.049417,
+      "dma_median_ms": 0.065208,
+      "fp32_sha256": "0b8127f63479ac8a64eb27a76cc23d9f543ae5ca7e61bdf20cd2139c4e6ad416"
+    },
+    {
+      "k": 512,
+      "n": 2048,
+      "base_median_ms": 0.043209,
+      "rvv_median_ms": 0.048791,
+      "dma_median_ms": 0.064042,
+      "fp32_sha256": "e66135f9a87fa600059e3b769786dad6af1e579a2559e2d59e1971688634722c"
+    },
+    {
+      "k": 2048,
+      "n": 1024,
+      "base_median_ms": 0.136166,
+      "rvv_median_ms": 0.086458,
+      "dma_median_ms": 0.156916,
+      "fp32_sha256": "828e2b36e2d081d2dd2564496a5c43c41d26a0f30ca914d939cc6f487d3273f1"
+    },
+    {
+      "k": 1024,
+      "n": 2048,
+      "base_median_ms": 0.176375,
+      "rvv_median_ms": 0.108541,
+      "dma_median_ms": 0.116584,
+      "fp32_sha256": "3d644d83a045850ac1e279d268d3552e0ea572f9a294e17206d311bbf7332f1f"
+    }
+  ],
+  "gate_visibility_stress": [
+    "workers=8 tiles=8 fast=481 cooperative=519 errors=0",
+    "workers=4 tiles=8 fast=0 cooperative=1000 errors=0"
+  ],
+  "router_operator_checks": "ROUTER_CHECKS_PASSED",
+  "private_row_operator_checks": [
+    "2048-512",
+    "2048-8192",
+    "4096-4096",
+    "512-1056"
+  ],
+  "decision": "No kernel PR. The capped DMA path completed and passed the output checks but was slower. The initial best non-DMA candidate did not beat its reversed-order control. The broad pipeline failed the full-model timeout."
+}

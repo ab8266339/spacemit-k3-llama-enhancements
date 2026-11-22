@@ -62,3 +62,5 @@ See [machine-readable results and sampling counts](results/qwen36-35b-k3.json). 
 ## Kernel experiments and upstream
 
 The [Q6_K operator probe and candidate patches](experiments/q6-decode/README.md) include output hashes, per-shape timings and a repeated unmodified control. [Upstream projects and contribution status](UPSTREAM.md) identifies the vendor, mainline and integration repositories.
+
+The [decode synchronization and DMA follow-up](experiments/dma-decode/README.md) tests MMZ-to-TCM transfers, bounded asynchronous staging, and independent reruns of the best initial candidate.
